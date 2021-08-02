@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "885978279265",
+    "project_id": "co2mmit",
+    "storage_bucket": "co2mmit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885978279265:android:c1de24bbc56e978ff4e920",
+        "android_client_info": {
+          "package_name": "com.co2mmit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885978279265-pkrmhetocjihjlmun763es5hno2jsqv5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrgRFAAep6jDfQOccZeEYkBRvT8cFVbGw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885978279265-pkrmhetocjihjlmun763es5hno2jsqv5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
