@@ -10,6 +10,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class MyCo2Widget extends StatefulWidget {
   MyCo2Widget({Key key}) : super(key: key);
@@ -669,6 +670,9 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
                             ).image,
                           ),
                           borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: FlutterFlowTheme.customColor4,
+                          ),
                         ),
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
@@ -787,6 +791,9 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
                             )
                           ],
                           borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: FlutterFlowTheme.customColor4,
+                          ),
                         ),
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
@@ -904,6 +911,9 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
                             )
                           ],
                           borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: FlutterFlowTheme.customColor4,
+                          ),
                         ),
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
@@ -1021,6 +1031,9 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
                             )
                           ],
                           borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: FlutterFlowTheme.customColor4,
+                          ),
                         ),
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(0, 120, 0, 0),

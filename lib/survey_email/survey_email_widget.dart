@@ -1,19 +1,19 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../survey_q2/survey_q2_widget.dart';
+import '../survey_total/survey_total_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
-class SurveyQ1Widget extends StatefulWidget {
-  SurveyQ1Widget({Key key}) : super(key: key);
+class SurveyEmailWidget extends StatefulWidget {
+  SurveyEmailWidget({Key key}) : super(key: key);
 
   @override
-  _SurveyQ1WidgetState createState() => _SurveyQ1WidgetState();
+  _SurveyEmailWidgetState createState() => _SurveyEmailWidgetState();
 }
 
-class _SurveyQ1WidgetState extends State<SurveyQ1Widget> {
+class _SurveyEmailWidgetState extends State<SurveyEmailWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -30,16 +30,13 @@ class _SurveyQ1WidgetState extends State<SurveyQ1Widget> {
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Align(
-                    alignment: Alignment(0, 0),
-                    child: Padding(
-                      padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                      child: Image.asset(
-                        'assets/images/Logo@3x.png',
-                        width: 200,
-                        height: 100,
-                        fit: BoxFit.cover,
-                      ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                    child: Image.asset(
+                      'assets/images/Logo@3x.png',
+                      width: 200,
+                      height: 100,
+                      fit: BoxFit.cover,
                     ),
                   )
                 ],
@@ -53,8 +50,8 @@ class _SurveyQ1WidgetState extends State<SurveyQ1Widget> {
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                    child: FaIcon(
-                      FontAwesomeIcons.thumbsUp,
+                    child: Icon(
+                      Icons.email_outlined,
                       color: FlutterFlowTheme.tertiaryColor,
                       size: 27,
                     ),
@@ -69,7 +66,7 @@ class _SurveyQ1WidgetState extends State<SurveyQ1Widget> {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
                     child: Text(
-                      'How much time do you spend on social media?',
+                      'How much time do you spend on emails?',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.title1.override(
                         fontFamily: 'Open Sans Condensed',
@@ -89,7 +86,7 @@ class _SurveyQ1WidgetState extends State<SurveyQ1Widget> {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(25, 0, 25, 20),
                     child: Text(
-                      'Instagram, Facebook, TikTok, Twitter, \\n  WhatsApp, Messenger, etc.',
+                      'Microsoft Outlook, Gmail, Yahoo, etc.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.bodyText1.override(
                         fontFamily: 'Open Sans Condensed',
@@ -109,7 +106,7 @@ class _SurveyQ1WidgetState extends State<SurveyQ1Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ2Widget(),
+                      builder: (context) => SurveyTotalWidget(),
                     ),
                   );
                 },
@@ -139,7 +136,7 @@ class _SurveyQ1WidgetState extends State<SurveyQ1Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ2Widget(),
+                      builder: (context) => SurveyTotalWidget(),
                     ),
                   );
                 },
@@ -168,7 +165,7 @@ class _SurveyQ1WidgetState extends State<SurveyQ1Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ2Widget(),
+                      builder: (context) => SurveyTotalWidget(),
                     ),
                   );
                 },
@@ -195,7 +192,7 @@ class _SurveyQ1WidgetState extends State<SurveyQ1Widget> {
                 await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SurveyQ2Widget(),
+                    builder: (context) => SurveyTotalWidget(),
                   ),
                 );
               },

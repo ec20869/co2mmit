@@ -1,18 +1,19 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../survey_q3/survey_q3_widget.dart';
+import '../survey_gaming/survey_gaming_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
-class SurveyQ2Widget extends StatefulWidget {
-  SurveyQ2Widget({Key key}) : super(key: key);
+class SurveyVideoWidget extends StatefulWidget {
+  SurveyVideoWidget({Key key}) : super(key: key);
 
   @override
-  _SurveyQ2WidgetState createState() => _SurveyQ2WidgetState();
+  _SurveyVideoWidgetState createState() => _SurveyVideoWidgetState();
 }
 
-class _SurveyQ2WidgetState extends State<SurveyQ2Widget> {
+class _SurveyVideoWidgetState extends State<SurveyVideoWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -105,7 +106,7 @@ class _SurveyQ2WidgetState extends State<SurveyQ2Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ3Widget(),
+                      builder: (context) => SurveyGamingWidget(),
                     ),
                   );
                 },
@@ -135,7 +136,7 @@ class _SurveyQ2WidgetState extends State<SurveyQ2Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ3Widget(),
+                      builder: (context) => SurveyGamingWidget(),
                     ),
                   );
                 },
@@ -164,7 +165,7 @@ class _SurveyQ2WidgetState extends State<SurveyQ2Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ3Widget(),
+                      builder: (context) => SurveyGamingWidget(),
                     ),
                   );
                 },
@@ -191,7 +192,7 @@ class _SurveyQ2WidgetState extends State<SurveyQ2Widget> {
                 await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SurveyQ3Widget(),
+                    builder: (context) => SurveyGamingWidget(),
                   ),
                 );
               },

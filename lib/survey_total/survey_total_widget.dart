@@ -1,11 +1,14 @@
+import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../register/register_widget.dart';
-import '../survey_q1/survey_q1_widget.dart';
+import '../survey_social/survey_social_widget.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SurveyTotalWidget extends StatefulWidget {
   SurveyTotalWidget({Key key}) : super(key: key);
@@ -15,6 +18,7 @@ class SurveyTotalWidget extends StatefulWidget {
 }
 
 class _SurveyTotalWidgetState extends State<SurveyTotalWidget> {
+  dynamic total;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -64,25 +68,36 @@ class _SurveyTotalWidgetState extends State<SurveyTotalWidget> {
               ],
             ),
             Row(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      '62.7 KG',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Open Sans Condensed',
-                        color: FlutterFlowTheme.customColor5,
-                        fontSize: 50,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ],
+                InkWell(
+                  onTap: () async {
+                    await chartsCall();
+                  },
+                  child: Text(
+                    '',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Open Sans Condensed',
+                      color: FlutterFlowTheme.customColor5,
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: Text(
+                    'KG',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Open Sans Condensed',
+                      color: FlutterFlowTheme.customColor5,
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 )
               ],
             ),
@@ -116,11 +131,33 @@ class _SurveyTotalWidgetState extends State<SurveyTotalWidget> {
                     ).image,
                   ),
                 ),
-                child: Image.network(
-                  'https://quickchart.io/chart/render/zm-63536771-fab0-4b84-9a20-b7f12f481040',
-                  width: 100,
-                  height: 100,
-                  fit: BoxFit.contain,
+                child: FutureBuilder<dynamic>(
+                  future: chartsCall(),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: LinearProgressIndicator(
+                          color: FlutterFlowTheme.customColor4,
+                        ),
+                      );
+                    }
+                    final imageChartsResponse = snapshot.data;
+                    return InkWell(
+                      onTap: () async {
+                        total = await chartsCall();
+
+                        setState(() {});
+                      },
+                      child: CachedNetworkImage(
+                        imageUrl:
+                            'https://quickchart.io/chart/render/zm-63536771-fab0-4b84-9a20-b7f12f481040',
+                        width: 100,
+                        height: 100,
+                        fit: BoxFit.contain,
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
@@ -242,7 +279,7 @@ class _SurveyTotalWidgetState extends State<SurveyTotalWidget> {
                 await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SurveyQ1Widget(),
+                    builder: (context) => SurveySocialWidget(),
                   ),
                 );
               },

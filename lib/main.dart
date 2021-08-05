@@ -1,12 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'auth/firebase_user_provider.dart';
-import 'package:co2mmit/login/login_widget.dart';
+import 'package:co2mmit/survey_multi_page/survey_multi_page_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
+import 'overview/overview_widget.dart';
 import 'my_co2/my_co2_widget.dart';
 import 'actions/actions_widget.dart';
-import 'overview/overview_widget.dart';
 import 'profile_page/profile_page_widget.dart';
 
 void main() async {
@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
             )
           : currentUser.loggedIn
               ? NavBarPage()
-              : LoginWidget(),
+              : SurveyMultiPageWidget(),
     );
   }
 }
@@ -76,15 +76,23 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
+      'Overview': OverviewWidget(),
       'MyCo2': MyCo2Widget(),
       'Actions': ActionsWidget(),
-      'Overview': OverviewWidget(),
       'ProfilePage': ProfilePageWidget(),
     };
     return Scaffold(
       body: tabs[_currentPage],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_outlined,
+              color: Color(0xFF9E9E9E),
+              size: 24,
+            ),
+            label: '',
+          ),
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.cloud,
@@ -102,24 +110,16 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home_outlined,
-              color: Color(0xFF9E9E9E),
-              size: 24,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               Icons.account_circle_outlined,
               size: 24,
             ),
             label: 'Home',
           )
         ],
-        backgroundColor: FlutterFlowTheme.customColor2,
+        backgroundColor: FlutterFlowTheme.customColor5,
         currentIndex: tabs.keys.toList().indexOf(_currentPage),
-        selectedItemColor: FlutterFlowTheme.customColor5,
-        unselectedItemColor: FlutterFlowTheme.tertiaryColor,
+        selectedItemColor: FlutterFlowTheme.tertiaryColor,
+        unselectedItemColor: FlutterFlowTheme.customColor2,
         onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
         showSelectedLabels: true,
         showUnselectedLabels: true,

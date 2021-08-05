@@ -1,19 +1,20 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../survey_q4/survey_q4_widget.dart';
+import '../survey_audio/survey_audio_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
-class SurveyQ3Widget extends StatefulWidget {
-  SurveyQ3Widget({Key key}) : super(key: key);
+class SurveyInternetWidget extends StatefulWidget {
+  SurveyInternetWidget({Key key}) : super(key: key);
 
   @override
-  _SurveyQ3WidgetState createState() => _SurveyQ3WidgetState();
+  _SurveyInternetWidgetState createState() => _SurveyInternetWidgetState();
 }
 
-class _SurveyQ3WidgetState extends State<SurveyQ3Widget> {
+class _SurveyInternetWidgetState extends State<SurveyInternetWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -51,7 +52,7 @@ class _SurveyQ3WidgetState extends State<SurveyQ3Widget> {
                   Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                     child: FaIcon(
-                      FontAwesomeIcons.gamepad,
+                      FontAwesomeIcons.search,
                       color: FlutterFlowTheme.tertiaryColor,
                       size: 27,
                     ),
@@ -66,7 +67,7 @@ class _SurveyQ3WidgetState extends State<SurveyQ3Widget> {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
                     child: Text(
-                      'How much time do you spend on gaming?',
+                      'How much time do you spend on the internet?',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.title1.override(
                         fontFamily: 'Open Sans Condensed',
@@ -86,7 +87,7 @@ class _SurveyQ3WidgetState extends State<SurveyQ3Widget> {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(25, 0, 25, 20),
                     child: Text(
-                      'Xbox, Playstation, GeForce Now, Vortex,  etc.',
+                      'Shopping, Searching, Reading, Browsing,  etc.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.bodyText1.override(
                         fontFamily: 'Open Sans Condensed',
@@ -106,7 +107,7 @@ class _SurveyQ3WidgetState extends State<SurveyQ3Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ4Widget(),
+                      builder: (context) => SurveyAudioWidget(),
                     ),
                   );
                 },
@@ -136,7 +137,7 @@ class _SurveyQ3WidgetState extends State<SurveyQ3Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ4Widget(),
+                      builder: (context) => SurveyAudioWidget(),
                     ),
                   );
                 },
@@ -165,7 +166,7 @@ class _SurveyQ3WidgetState extends State<SurveyQ3Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ4Widget(),
+                      builder: (context) => SurveyAudioWidget(),
                     ),
                   );
                 },
@@ -192,7 +193,7 @@ class _SurveyQ3WidgetState extends State<SurveyQ3Widget> {
                 await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SurveyQ4Widget(),
+                    builder: (context) => SurveyAudioWidget(),
                   ),
                 );
               },

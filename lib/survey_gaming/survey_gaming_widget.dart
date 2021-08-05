@@ -1,17 +1,20 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../survey_internet/survey_internet_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
-class SurveyQ6Widget extends StatefulWidget {
-  SurveyQ6Widget({Key key}) : super(key: key);
+class SurveyGamingWidget extends StatefulWidget {
+  SurveyGamingWidget({Key key}) : super(key: key);
 
   @override
-  _SurveyQ6WidgetState createState() => _SurveyQ6WidgetState();
+  _SurveyGamingWidgetState createState() => _SurveyGamingWidgetState();
 }
 
-class _SurveyQ6WidgetState extends State<SurveyQ6Widget> {
+class _SurveyGamingWidgetState extends State<SurveyGamingWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -48,8 +51,8 @@ class _SurveyQ6WidgetState extends State<SurveyQ6Widget> {
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                    child: Icon(
-                      Icons.email_outlined,
+                    child: FaIcon(
+                      FontAwesomeIcons.gamepad,
                       color: FlutterFlowTheme.tertiaryColor,
                       size: 27,
                     ),
@@ -64,7 +67,7 @@ class _SurveyQ6WidgetState extends State<SurveyQ6Widget> {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
                     child: Text(
-                      'How much time do you spend on emails?',
+                      'How much time do you spend on gaming?',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.title1.override(
                         fontFamily: 'Open Sans Condensed',
@@ -84,7 +87,7 @@ class _SurveyQ6WidgetState extends State<SurveyQ6Widget> {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(25, 0, 25, 20),
                     child: Text(
-                      'Microsoft Outlook, Gmail, Yahoo, etc.',
+                      'Xbox, Playstation, GeForce Now, Vortex,  etc.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.bodyText1.override(
                         fontFamily: 'Open Sans Condensed',
@@ -100,8 +103,13 @@ class _SurveyQ6WidgetState extends State<SurveyQ6Widget> {
             Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
+                onPressed: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SurveyInternetWidget(),
+                    ),
+                  );
                 },
                 text:
                     'None                                                          ',
@@ -125,8 +133,13 @@ class _SurveyQ6WidgetState extends State<SurveyQ6Widget> {
             Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
+                onPressed: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SurveyInternetWidget(),
+                    ),
+                  );
                 },
                 text: 'A little                                 Up to 1hr/day',
                 options: FFButtonOptions(
@@ -149,8 +162,13 @@ class _SurveyQ6WidgetState extends State<SurveyQ6Widget> {
             Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
+                onPressed: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SurveyInternetWidget(),
+                    ),
+                  );
                 },
                 text: 'A fair bit                                 1 - 2hrs/day',
                 options: FFButtonOptions(
@@ -171,8 +189,13 @@ class _SurveyQ6WidgetState extends State<SurveyQ6Widget> {
               ),
             ),
             FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
+              onPressed: () async {
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SurveyInternetWidget(),
+                  ),
+                );
               },
               text: 'A lot                         More than 2hrs/day ',
               options: FFButtonOptions(

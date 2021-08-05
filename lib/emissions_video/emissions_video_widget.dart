@@ -1,8 +1,10 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class EmissionsVideoWidget extends StatefulWidget {
   EmissionsVideoWidget({Key key}) : super(key: key);
@@ -21,13 +23,23 @@ class _EmissionsVideoWidgetState extends State<EmissionsVideoWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.customColor2,
         automaticallyImplyLeading: false,
-        leading: Icon(
-          Icons.chevron_left_rounded,
-          color: FlutterFlowTheme.customColor5,
-          size: 32,
+        leading: InkWell(
+          onTap: () async {
+            await Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => NavBarPage(initialPage: 'MyCo2'),
+              ),
+            );
+          },
+          child: Icon(
+            Icons.chevron_left_rounded,
+            color: FlutterFlowTheme.customColor5,
+            size: 32,
+          ),
         ),
         title: Text(
-          'My Emissions',
+          'My CO2',
           style: FlutterFlowTheme.title2.override(
             fontFamily: 'Open Sans Condensed',
             color: FlutterFlowTheme.customColor5,
@@ -111,8 +123,13 @@ class _EmissionsVideoWidgetState extends State<EmissionsVideoWidget> {
             Padding(
               padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('ButtonPrimary pressed ...');
+                onPressed: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NavBarPage(initialPage: 'Actions'),
+                    ),
+                  );
                 },
                 text: 'Discover ways to reduce your footprint',
                 options: FFButtonOptions(

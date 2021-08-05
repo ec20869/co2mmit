@@ -6,6 +6,7 @@ import '../login/login_widget.dart';
 import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class RegisterWidget extends StatefulWidget {
   RegisterWidget({Key key}) : super(key: key);
@@ -297,13 +298,12 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                       return;
                                     }
 
-                                    await Navigator.pushAndRemoveUntil(
+                                    await Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             NavBarPage(initialPage: 'Overview'),
                                       ),
-                                      (r) => false,
                                     );
                                   },
                                   text: 'Create Account',
@@ -336,7 +336,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                       child: Align(
                                         alignment: Alignment(0, 1),
                                         child: Text(
-                                          'Don\'t have an account yet?',
+                                          'Already have an account?',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.subtitle2
                                               .override(

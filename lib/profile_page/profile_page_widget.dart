@@ -1,8 +1,11 @@
+import '../backend/firebase_storage/storage.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../flutter_flow/upload_media.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ProfilePageWidget extends StatefulWidget {
   ProfilePageWidget({Key key}) : super(key: key);
@@ -12,6 +15,7 @@ class ProfilePageWidget extends StatefulWidget {
 }
 
 class _ProfilePageWidgetState extends State<ProfilePageWidget> {
+  String uploadedFileUrl = '';
   TextEditingController textController1;
   TextEditingController textController2;
   bool switchListTileValue;
@@ -121,13 +125,37 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                       ),
                       Padding(
                         padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
-                        child: Text(
-                          'Edit Image',
-                          style: GoogleFonts.getFont(
-                            'DM Sans',
-                            color: FlutterFlowTheme.customColor4,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 10,
+                        child: InkWell(
+                          onTap: () async {
+                            final selectedMedia = await selectMedia();
+                            if (selectedMedia != null &&
+                                validateFileFormat(
+                                    selectedMedia.storagePath, context)) {
+                              showUploadMessage(context, 'Uploading file...',
+                                  showLoading: true);
+                              final downloadUrl = await uploadData(
+                                  selectedMedia.storagePath,
+                                  selectedMedia.bytes);
+                              ScaffoldMessenger.of(context)
+                                  .hideCurrentSnackBar();
+                              if (downloadUrl != null) {
+                                setState(() => uploadedFileUrl = downloadUrl);
+                                showUploadMessage(context, 'Success!');
+                              } else {
+                                showUploadMessage(
+                                    context, 'Failed to upload media');
+                                return;
+                              }
+                            }
+                          },
+                          child: Text(
+                            'Edit Image',
+                            style: GoogleFonts.getFont(
+                              'DM Sans',
+                              color: FlutterFlowTheme.customColor4,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 10,
+                            ),
                           ),
                         ),
                       )
@@ -160,7 +188,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 controller: textController1,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Your Nam',
+                                  labelText: 'Your Name',
                                   labelStyle:
                                       FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'Open Sans Condensed',
@@ -263,7 +291,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                         ),
                       ),
                       SwitchListTile(
-                        value: switchListTileValue ?? false,
+                        value: switchListTileValue ?? true,
                         onChanged: (newValue) =>
                             setState(() => switchListTileValue = newValue),
                         title: Text(

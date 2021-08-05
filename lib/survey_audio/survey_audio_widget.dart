@@ -1,19 +1,20 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../survey_q6/survey_q6_widget.dart';
+import '../survey_email/survey_email_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
-class SurveyQ5Widget extends StatefulWidget {
-  SurveyQ5Widget({Key key}) : super(key: key);
+class SurveyAudioWidget extends StatefulWidget {
+  SurveyAudioWidget({Key key}) : super(key: key);
 
   @override
-  _SurveyQ5WidgetState createState() => _SurveyQ5WidgetState();
+  _SurveyAudioWidgetState createState() => _SurveyAudioWidgetState();
 }
 
-class _SurveyQ5WidgetState extends State<SurveyQ5Widget> {
+class _SurveyAudioWidgetState extends State<SurveyAudioWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -84,7 +85,7 @@ class _SurveyQ5WidgetState extends State<SurveyQ5Widget> {
                 await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SurveyQ6Widget(),
+                    builder: (context) => SurveyEmailWidget(),
                   ),
                 );
               },
@@ -116,7 +117,7 @@ class _SurveyQ5WidgetState extends State<SurveyQ5Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ6Widget(),
+                      builder: (context) => SurveyEmailWidget(),
                     ),
                   );
                 },
@@ -146,7 +147,7 @@ class _SurveyQ5WidgetState extends State<SurveyQ5Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ6Widget(),
+                      builder: (context) => SurveyEmailWidget(),
                     ),
                   );
                 },
@@ -175,7 +176,7 @@ class _SurveyQ5WidgetState extends State<SurveyQ5Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ6Widget(),
+                      builder: (context) => SurveyEmailWidget(),
                     ),
                   );
                 },
@@ -202,7 +203,7 @@ class _SurveyQ5WidgetState extends State<SurveyQ5Widget> {
                 await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SurveyQ6Widget(),
+                    builder: (context) => SurveyEmailWidget(),
                   ),
                 );
               },

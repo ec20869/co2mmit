@@ -1,9 +1,12 @@
+import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../main.dart';
 import '../register/register_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class LoginWidget extends StatefulWidget {
   LoginWidget({Key key}) : super(key: key);
@@ -13,8 +16,8 @@ class LoginWidget extends StatefulWidget {
 }
 
 class _LoginWidgetState extends State<LoginWidget> {
-  TextEditingController textController1;
-  TextEditingController textController2;
+  TextEditingController emailTextController;
+  TextEditingController passwordTextController;
   bool passwordVisibility;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -22,8 +25,8 @@ class _LoginWidgetState extends State<LoginWidget> {
   @override
   void initState() {
     super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
+    emailTextController = TextEditingController();
+    passwordTextController = TextEditingController();
     passwordVisibility = false;
   }
 
@@ -75,7 +78,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               Padding(
                                 padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
                                 child: TextFormField(
-                                  controller: textController1,
+                                  controller: emailTextController,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText: 'Email Address',
@@ -135,7 +138,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               Padding(
                                 padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
                                 child: TextFormField(
-                                  controller: textController2,
+                                  controller: passwordTextController,
                                   obscureText: !passwordVisibility,
                                   decoration: InputDecoration(
                                     labelText: 'Password',
@@ -200,8 +203,26 @@ class _LoginWidgetState extends State<LoginWidget> {
                               Padding(
                                 padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
                                 child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    if (!formKey.currentState.validate()) {
+                                      return;
+                                    }
+                                    final user = await signInWithEmail(
+                                      context,
+                                      emailTextController.text,
+                                      passwordTextController.text,
+                                    );
+                                    if (user == null) {
+                                      return;
+                                    }
+
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            NavBarPage(initialPage: 'Overview'),
+                                      ),
+                                    );
                                   },
                                   text: 'Login',
                                   options: FFButtonOptions(
@@ -232,15 +253,26 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     Expanded(
                                       child: Align(
                                         alignment: Alignment(0, 1),
-                                        child: Text(
-                                          'Don\'t have an account yet?',
-                                          textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.subtitle2
-                                              .override(
-                                            fontFamily: 'Open Sans Condensed',
-                                            color:
-                                                FlutterFlowTheme.customColor5,
-                                            fontSize: 18,
+                                        child: InkWell(
+                                          onTap: () async {
+                                            await Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    RegisterWidget(),
+                                              ),
+                                            );
+                                          },
+                                          child: Text(
+                                            'Don\'t have an account yet?',
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.subtitle2
+                                                .override(
+                                              fontFamily: 'Open Sans Condensed',
+                                              color:
+                                                  FlutterFlowTheme.customColor5,
+                                              fontSize: 18,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -252,13 +284,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             EdgeInsets.fromLTRB(0, 0, 20, 0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            await Navigator.pushAndRemoveUntil(
+                                            await Navigator.push(
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) =>
                                                     RegisterWidget(),
                                               ),
-                                              (r) => false,
                                             );
                                           },
                                           text: 'Register',

@@ -1,19 +1,20 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../survey_q5/survey_q5_widget.dart';
+import '../survey_video/survey_video_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
-class SurveyQ4Widget extends StatefulWidget {
-  SurveyQ4Widget({Key key}) : super(key: key);
+class SurveySocialWidget extends StatefulWidget {
+  SurveySocialWidget({Key key}) : super(key: key);
 
   @override
-  _SurveyQ4WidgetState createState() => _SurveyQ4WidgetState();
+  _SurveySocialWidgetState createState() => _SurveySocialWidgetState();
 }
 
-class _SurveyQ4WidgetState extends State<SurveyQ4Widget> {
+class _SurveySocialWidgetState extends State<SurveySocialWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -30,13 +31,16 @@ class _SurveyQ4WidgetState extends State<SurveyQ4Widget> {
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                    child: Image.asset(
-                      'assets/images/Logo@3x.png',
-                      width: 200,
-                      height: 100,
-                      fit: BoxFit.cover,
+                  Align(
+                    alignment: Alignment(0, 0),
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                      child: Image.asset(
+                        'assets/images/Logo@3x.png',
+                        width: 200,
+                        height: 100,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   )
                 ],
@@ -51,7 +55,7 @@ class _SurveyQ4WidgetState extends State<SurveyQ4Widget> {
                   Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                     child: FaIcon(
-                      FontAwesomeIcons.search,
+                      FontAwesomeIcons.thumbsUp,
                       color: FlutterFlowTheme.tertiaryColor,
                       size: 27,
                     ),
@@ -66,7 +70,7 @@ class _SurveyQ4WidgetState extends State<SurveyQ4Widget> {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
                     child: Text(
-                      'How much time do you spend on the internet?',
+                      'How much time do you spend on social media?',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.title1.override(
                         fontFamily: 'Open Sans Condensed',
@@ -86,7 +90,7 @@ class _SurveyQ4WidgetState extends State<SurveyQ4Widget> {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(25, 0, 25, 20),
                     child: Text(
-                      'Shopping, Searching, Reading, Browsing,  etc.',
+                      'Instagram, Facebook, TikTok, Twitter, \\n  WhatsApp, Messenger, etc.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.bodyText1.override(
                         fontFamily: 'Open Sans Condensed',
@@ -106,7 +110,7 @@ class _SurveyQ4WidgetState extends State<SurveyQ4Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ5Widget(),
+                      builder: (context) => SurveyVideoWidget(),
                     ),
                   );
                 },
@@ -136,7 +140,7 @@ class _SurveyQ4WidgetState extends State<SurveyQ4Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ5Widget(),
+                      builder: (context) => SurveyVideoWidget(),
                     ),
                   );
                 },
@@ -165,7 +169,7 @@ class _SurveyQ4WidgetState extends State<SurveyQ4Widget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SurveyQ5Widget(),
+                      builder: (context) => SurveyVideoWidget(),
                     ),
                   );
                 },
@@ -192,7 +196,7 @@ class _SurveyQ4WidgetState extends State<SurveyQ4Widget> {
                 await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SurveyQ5Widget(),
+                    builder: (context) => SurveyVideoWidget(),
                   ),
                 );
               },
