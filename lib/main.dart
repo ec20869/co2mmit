@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'auth/firebase_user_provider.dart';
-import 'package:co2mmit/survey_multi_page/survey_multi_page_widget.dart';
+import 'package:co2mmit/login/login_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'overview/overview_widget.dart';
@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
             )
           : currentUser.loggedIn
               ? NavBarPage()
-              : SurveyMultiPageWidget(),
+              : LoginWidget(),
     );
   }
 }

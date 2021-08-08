@@ -110,6 +110,28 @@ abstract class SurveyRecord
   DocumentReference get user;
 
   @nullable
+  @BuiltValueField(wireName: 'display_name')
+  String get displayName;
+
+  @nullable
+  @BuiltValueField(wireName: 'photo_url')
+  String get photoUrl;
+
+  @nullable
+  @BuiltValueField(wireName: 'created_time')
+  DateTime get createdTime;
+
+  @nullable
+  String get email;
+
+  @nullable
+  String get uid;
+
+  @nullable
+  @BuiltValueField(wireName: 'phone_number')
+  String get phoneNumber;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -137,7 +159,12 @@ abstract class SurveyRecord
     ..answer21 = 0
     ..answer22 = 0
     ..answer23 = 0
-    ..answer24 = 0;
+    ..answer24 = 0
+    ..displayName = ''
+    ..photoUrl = ''
+    ..email = ''
+    ..uid = ''
+    ..phoneNumber = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('survey');
@@ -182,6 +209,12 @@ Map<String, dynamic> createSurveyRecordData({
   int answer23,
   int answer24,
   DocumentReference user,
+  String displayName,
+  String photoUrl,
+  DateTime createdTime,
+  String email,
+  String uid,
+  String phoneNumber,
 }) =>
     serializers.toFirestore(
         SurveyRecord.serializer,
@@ -210,4 +243,10 @@ Map<String, dynamic> createSurveyRecordData({
           ..answer22 = answer22
           ..answer23 = answer23
           ..answer24 = answer24
-          ..user = user));
+          ..user = user
+          ..displayName = displayName
+          ..photoUrl = photoUrl
+          ..createdTime = createdTime
+          ..email = email
+          ..uid = uid
+          ..phoneNumber = phoneNumber));

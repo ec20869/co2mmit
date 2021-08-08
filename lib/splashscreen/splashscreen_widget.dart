@@ -1,3 +1,4 @@
+import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -11,8 +12,32 @@ class SplashscreenWidget extends StatefulWidget {
   _SplashscreenWidgetState createState() => _SplashscreenWidgetState();
 }
 
-class _SplashscreenWidgetState extends State<SplashscreenWidget> {
+class _SplashscreenWidgetState extends State<SplashscreenWidget>
+    with TickerProviderStateMixin {
+  final animationsMap = {
+    'stackOnPageLoadAnimation': AnimationInfo(
+      curve: Curves.easeIn,
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 600,
+      fadeIn: true,
+    ),
+    'imageOnPageLoadAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 600,
+      fadeIn: true,
+    ),
+  };
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    startAnimations(
+      animationsMap.values
+          .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
+      this,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +67,7 @@ class _SplashscreenWidgetState extends State<SplashscreenWidget> {
                     width: 2700,
                     height: 150,
                     fit: BoxFit.fitWidth,
-                  ),
+                  ).animated([animationsMap['imageOnPageLoadAnimation']]),
                 ),
               ),
             ),
@@ -64,7 +89,7 @@ class _SplashscreenWidgetState extends State<SplashscreenWidget> {
               ),
             )
           ],
-        ),
+        ).animated([animationsMap['stackOnPageLoadAnimation']]),
       ),
     );
   }

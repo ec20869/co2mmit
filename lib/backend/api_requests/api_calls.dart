@@ -9,3 +9,13 @@ Future<dynamic> chartsCall() => ApiManager.instance.makeApiCall(
       params: {},
       returnResponse: true,
     );
+
+Future<dynamic> getSurveyTotalCall() => ApiManager.instance.makeApiCall(
+      callName: 'get survey total',
+      apiDomain: 'api.mathjs.org',
+      apiEndpoint: 'v4/?expr=100',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnResponse: true,
+    );

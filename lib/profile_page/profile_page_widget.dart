@@ -1,8 +1,12 @@
+import '../auth/auth_util.dart';
+import '../backend/backend.dart';
 import '../backend/firebase_storage/storage.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/upload_media.dart';
+import '../login/login_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -54,7 +58,26 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
             fontWeight: FontWeight.w600,
           ),
         ),
-        actions: [],
+        actions: [
+          IconButton(
+            onPressed: () async {
+              await signOut();
+              await Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoginWidget(),
+                ),
+                (r) => false,
+              );
+            },
+            icon: Icon(
+              Icons.logout,
+              color: FlutterFlowTheme.tertiaryColor,
+              size: 30,
+            ),
+            iconSize: 30,
+          )
+        ],
         centerTitle: false,
         elevation: 2,
       ),
@@ -321,8 +344,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             FFButtonWidget(
-                              onPressed: () {
-                                print('Button_Secondary pressed ...');
+                              onPressed: () async {
+                                final surveyUpdateData =
+                                    createSurveyRecordData();
+                                await currentUserReference
+                                    .update(surveyUpdateData);
                               },
                               text: 'Save Changes',
                               options: FFButtonOptions(

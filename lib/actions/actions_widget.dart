@@ -60,7 +60,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                           Padding(
                             padding: EdgeInsets.fromLTRB(16, 12, 0, 12),
                             child: Text(
-                              'Recommended for you',
+                              'Recommended for you...',
                               style: FlutterFlowTheme.bodyText2.override(
                                 fontFamily: 'Open Sans Condensed',
                                 color: FlutterFlowTheme.customColor4,
