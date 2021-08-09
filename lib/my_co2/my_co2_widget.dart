@@ -85,24 +85,14 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
                             color: FlutterFlowTheme.customColor4,
                             width: 2,
                           ),
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(8),
-                            bottomRight: Radius.circular(8),
-                            topLeft: Radius.circular(8),
-                            topRight: Radius.circular(8),
-                          ),
+                          borderRadius: BorderRadius.circular(8),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.customColor4,
                             width: 2,
                           ),
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(8),
-                            bottomRight: Radius.circular(8),
-                            topLeft: Radius.circular(8),
-                            topRight: Radius.circular(8),
-                          ),
+                          borderRadius: BorderRadius.circular(8),
                         ),
                         prefixIcon: Icon(
                           Icons.search_rounded,

@@ -1,13 +1,14 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'auth/firebase_user_provider.dart';
-import 'package:co2mmit/login/login_widget.dart';
+import 'package:co2mmit/register/register_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'overview/overview_widget.dart';
 import 'my_co2/my_co2_widget.dart';
 import 'actions/actions_widget.dart';
 import 'profile_page/profile_page_widget.dart';
+import 'survey_multi_page/survey_multi_page_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -49,7 +50,7 @@ class _MyAppState extends State<MyApp> {
             )
           : currentUser.loggedIn
               ? NavBarPage()
-              : LoginWidget(),
+              : RegisterWidget(),
     );
   }
 }
@@ -80,6 +81,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'MyCo2': MyCo2Widget(),
       'Actions': ActionsWidget(),
       'ProfilePage': ProfilePageWidget(),
+      'SurveyMultiPage': SurveyMultiPageWidget(),
     };
     return Scaffold(
       body: tabs[_currentPage],
@@ -111,6 +113,14 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.account_circle_outlined,
+              size: 24,
+            ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.calculator,
+              color: Color(0xFF9E9E9E),
               size: 24,
             ),
             label: 'Home',

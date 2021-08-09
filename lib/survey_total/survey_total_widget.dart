@@ -1,9 +1,8 @@
-import '../backend/api_requests/api_calls.dart';
+import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../register/register_widget.dart';
-import '../survey_social/survey_social_widget.dart';
+import '../main.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -11,14 +10,18 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SurveyTotalWidget extends StatefulWidget {
-  SurveyTotalWidget({Key key}) : super(key: key);
+  SurveyTotalWidget({
+    Key key,
+    this.results,
+  }) : super(key: key);
+
+  final SurveyRecord results;
 
   @override
   _SurveyTotalWidgetState createState() => _SurveyTotalWidgetState();
 }
 
 class _SurveyTotalWidgetState extends State<SurveyTotalWidget> {
-  dynamic total;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -71,20 +74,41 @@ class _SurveyTotalWidgetState extends State<SurveyTotalWidget> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                InkWell(
-                  onTap: () async {
-                    await chartsCall();
-                  },
-                  child: Text(
-                    '',
-                    textAlign: TextAlign.center,
-                    style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Open Sans Condensed',
-                      color: FlutterFlowTheme.customColor5,
-                      fontSize: 50,
-                      fontWeight: FontWeight.bold,
-                    ),
+                StreamBuilder<List<SurveyRecord>>(
+                  stream: querySurveyRecord(
+                    singleRecord: true,
                   ),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: LinearProgressIndicator(
+                          color: FlutterFlowTheme.customColor4,
+                        ),
+                      );
+                    }
+                    List<SurveyRecord> textSurveyRecordList = snapshot.data;
+                    // Customize what your widget looks like with no query results.
+                    if (snapshot.data.isEmpty) {
+                      return Container(
+                        height: 100,
+                        child: Center(
+                          child: Text('No results.'),
+                        ),
+                      );
+                    }
+                    final textSurveyRecord = textSurveyRecordList.first;
+                    return Text(
+                      '',
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Open Sans Condensed',
+                        color: FlutterFlowTheme.customColor5,
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    );
+                  },
                 ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
@@ -131,33 +155,12 @@ class _SurveyTotalWidgetState extends State<SurveyTotalWidget> {
                     ).image,
                   ),
                 ),
-                child: FutureBuilder<dynamic>(
-                  future: chartsCall(),
-                  builder: (context, snapshot) {
-                    // Customize what your widget looks like when it's loading.
-                    if (!snapshot.hasData) {
-                      return Center(
-                        child: LinearProgressIndicator(
-                          color: FlutterFlowTheme.customColor4,
-                        ),
-                      );
-                    }
-                    final imageChartsResponse = snapshot.data;
-                    return InkWell(
-                      onTap: () async {
-                        total = await chartsCall();
-
-                        setState(() {});
-                      },
-                      child: CachedNetworkImage(
-                        imageUrl:
-                            'https://quickchart.io/chart/render/zm-63536771-fab0-4b84-9a20-b7f12f481040',
-                        width: 100,
-                        height: 100,
-                        fit: BoxFit.contain,
-                      ),
-                    );
-                  },
+                child: CachedNetworkImage(
+                  imageUrl:
+                      'https://quickchart.io/chart/render/zm-63536771-fab0-4b84-9a20-b7f12f481040',
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.contain,
                 ),
               ),
             ),
@@ -252,7 +255,7 @@ class _SurveyTotalWidgetState extends State<SurveyTotalWidget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => RegisterWidget(),
+                      builder: (context) => NavBarPage(initialPage: 'Overview'),
                     ),
                   );
                 },
@@ -279,7 +282,8 @@ class _SurveyTotalWidgetState extends State<SurveyTotalWidget> {
                 await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SurveySocialWidget(),
+                    builder: (context) =>
+                        NavBarPage(initialPage: 'SurveyMultiPage'),
                   ),
                 );
               },

@@ -3,7 +3,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../login/login_widget.dart';
-import '../survey_multi_page/survey_multi_page_widget.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -104,24 +104,14 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         color: FlutterFlowTheme.customColor1,
                                         width: 1,
                                       ),
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(5),
-                                        bottomRight: Radius.circular(5),
-                                        topLeft: Radius.circular(5),
-                                        topRight: Radius.circular(5),
-                                      ),
+                                      borderRadius: BorderRadius.circular(5),
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.customColor1,
                                         width: 1,
                                       ),
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(5),
-                                        bottomRight: Radius.circular(5),
-                                        topLeft: Radius.circular(5),
-                                        topRight: Radius.circular(5),
-                                      ),
+                                      borderRadius: BorderRadius.circular(5),
                                     ),
                                   ),
                                   style: FlutterFlowTheme.bodyText1.override(
@@ -164,24 +154,14 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         color: FlutterFlowTheme.customColor1,
                                         width: 1,
                                       ),
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(5),
-                                        bottomRight: Radius.circular(5),
-                                        topLeft: Radius.circular(5),
-                                        topRight: Radius.circular(5),
-                                      ),
+                                      borderRadius: BorderRadius.circular(5),
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.customColor1,
                                         width: 1,
                                       ),
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(5),
-                                        bottomRight: Radius.circular(5),
-                                        topLeft: Radius.circular(5),
-                                        topRight: Radius.circular(5),
-                                      ),
+                                      borderRadius: BorderRadius.circular(5),
                                     ),
                                     suffixIcon: InkWell(
                                       onTap: () => setState(
@@ -229,24 +209,14 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         color: FlutterFlowTheme.customColor1,
                                         width: 1,
                                       ),
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(5),
-                                        bottomRight: Radius.circular(5),
-                                        topLeft: Radius.circular(5),
-                                        topRight: Radius.circular(5),
-                                      ),
+                                      borderRadius: BorderRadius.circular(5),
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.customColor1,
                                         width: 1,
                                       ),
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(5),
-                                        bottomRight: Radius.circular(5),
-                                        topLeft: Radius.circular(5),
-                                        topRight: Radius.circular(5),
-                                      ),
+                                      borderRadius: BorderRadius.circular(5),
                                     ),
                                     suffixIcon: InkWell(
                                       onTap: () => setState(
@@ -301,8 +271,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                     await Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) =>
-                                            SurveyMultiPageWidget(),
+                                        builder: (context) => NavBarPage(
+                                            initialPage: 'SurveyMultiPage'),
                                       ),
                                     );
                                   },

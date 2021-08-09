@@ -1,10 +1,11 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:url_launcher/url_launcher.dart';
-import 'package:json_path/json_path.dart';
 
 import 'lat_lng.dart';
 
@@ -26,12 +27,7 @@ Future launchURL(String url) async {
 
 DateTime get getCurrentTimestamp => DateTime.now();
 
-dynamic getJsonField(dynamic response, String jsonPath) {
-  final field = JsonPath(jsonPath).read(response);
-  return field.isNotEmpty ? field.first.value : null;
-}
-
-bool get isIos => Platform.isIOS;
+bool get isIos => !kIsWeb && Platform.isIOS;
 
 Future<LatLng> get getCurrentUserLocation =>
     queryCurrentUserLocation().onError((error, _) {
@@ -62,4 +58,34 @@ Future<LatLng> queryCurrentUserLocation() async {
   return position != null && position.latitude != 0 && position.longitude != 0
       ? LatLng(position.latitude, position.longitude)
       : null;
+}
+
+void showSnackbar(
+  BuildContext context,
+  String message, {
+  bool loading = false,
+  int duration = 4,
+}) {
+  ScaffoldMessenger.of(context).hideCurrentSnackBar();
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Row(
+        children: [
+          if (loading)
+            Padding(
+              padding: EdgeInsets.only(right: 10.0),
+              child: Container(
+                height: 20,
+                width: 20,
+                child: const CircularProgressIndicator(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          Text(message),
+        ],
+      ),
+      duration: Duration(seconds: duration),
+    ),
+  );
 }

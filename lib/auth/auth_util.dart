@@ -120,5 +120,5 @@ Future verifySmsCode({
 }
 
 DocumentReference get currentUserReference => currentUser?.user != null
-    ? SurveyRecord.collection.doc(currentUser.user.uid)
+    ? UsersRecord.collection.doc(currentUser.user.uid)
     : null;

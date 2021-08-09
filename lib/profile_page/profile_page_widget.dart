@@ -5,7 +5,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/upload_media.dart';
-import '../login/login_widget.dart';
+import '../register/register_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,8 +28,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
   @override
   void initState() {
     super.initState();
-    textController1 = TextEditingController(text: '[User Name]');
-    textController2 = TextEditingController(text: '[User Email]');
+    textController1 = TextEditingController(text: currentUserDisplayName);
+    textController2 = TextEditingController(text: currentUserEmail);
   }
 
   @override
@@ -65,7 +65,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
               await Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => LoginWidget(),
+                  builder: (context) => RegisterWidget(),
                 ),
                 (r) => false,
               );
@@ -148,38 +148,57 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                       ),
                       Padding(
                         padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
-                        child: InkWell(
-                          onTap: () async {
-                            final selectedMedia = await selectMedia();
-                            if (selectedMedia != null &&
-                                validateFileFormat(
-                                    selectedMedia.storagePath, context)) {
-                              showUploadMessage(context, 'Uploading file...',
-                                  showLoading: true);
-                              final downloadUrl = await uploadData(
-                                  selectedMedia.storagePath,
-                                  selectedMedia.bytes);
-                              ScaffoldMessenger.of(context)
-                                  .hideCurrentSnackBar();
-                              if (downloadUrl != null) {
-                                setState(() => uploadedFileUrl = downloadUrl);
-                                showUploadMessage(context, 'Success!');
-                              } else {
-                                showUploadMessage(
-                                    context, 'Failed to upload media');
-                                return;
-                              }
+                        child: StreamBuilder<UsersRecord>(
+                          stream: UsersRecord.getDocument(currentUserReference),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: LinearProgressIndicator(
+                                  color: FlutterFlowTheme.customColor4,
+                                ),
+                              );
                             }
+                            final textUsersRecord = snapshot.data;
+                            return InkWell(
+                              onTap: () async {
+                                final selectedMedia =
+                                    await selectMediaWithSourceBottomSheet(
+                                  context: context,
+                                );
+                                if (selectedMedia != null &&
+                                    validateFileFormat(
+                                        selectedMedia.storagePath, context)) {
+                                  showUploadMessage(
+                                      context, 'Uploading file...',
+                                      showLoading: true);
+                                  final downloadUrl = await uploadData(
+                                      selectedMedia.storagePath,
+                                      selectedMedia.bytes);
+                                  ScaffoldMessenger.of(context)
+                                      .hideCurrentSnackBar();
+                                  if (downloadUrl != null) {
+                                    setState(
+                                        () => uploadedFileUrl = downloadUrl);
+                                    showUploadMessage(context, 'Success!');
+                                  } else {
+                                    showUploadMessage(
+                                        context, 'Failed to upload media');
+                                    return;
+                                  }
+                                }
+                              },
+                              child: Text(
+                                'Edit Image',
+                                style: GoogleFonts.getFont(
+                                  'DM Sans',
+                                  color: FlutterFlowTheme.customColor4,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 10,
+                                ),
+                              ),
+                            );
                           },
-                          child: Text(
-                            'Edit Image',
-                            style: GoogleFonts.getFont(
-                              'DM Sans',
-                              color: FlutterFlowTheme.customColor4,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 10,
-                            ),
-                          ),
                         ),
                       )
                     ],
@@ -228,24 +247,14 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                       color: Color(0xFFDBE2E7),
                                       width: 1,
                                     ),
-                                    borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(8),
-                                      bottomRight: Radius.circular(8),
-                                      topLeft: Radius.circular(8),
-                                      topRight: Radius.circular(8),
-                                    ),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFFDBE2E7),
                                       width: 1,
                                     ),
-                                    borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(8),
-                                      bottomRight: Radius.circular(8),
-                                      topLeft: Radius.circular(8),
-                                      topRight: Radius.circular(8),
-                                    ),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                 ),
                                 style: FlutterFlowTheme.bodyText1.override(
@@ -284,24 +293,14 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                       color: Color(0xFFDBE2E7),
                                       width: 1,
                                     ),
-                                    borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(8),
-                                      bottomRight: Radius.circular(8),
-                                      topLeft: Radius.circular(8),
-                                      topRight: Radius.circular(8),
-                                    ),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0xFFDBE2E7),
                                       width: 1,
                                     ),
-                                    borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(8),
-                                      bottomRight: Radius.circular(8),
-                                      topLeft: Radius.circular(8),
-                                      topRight: Radius.circular(8),
-                                    ),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                 ),
                                 style: FlutterFlowTheme.bodyText1.override(
@@ -345,10 +344,12 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                           children: [
                             FFButtonWidget(
                               onPressed: () async {
-                                final surveyUpdateData =
-                                    createSurveyRecordData();
+                                final usersUpdateData = createUsersRecordData(
+                                  email: '',
+                                  displayName: '',
+                                );
                                 await currentUserReference
-                                    .update(surveyUpdateData);
+                                    .update(usersUpdateData);
                               },
                               text: 'Save Changes',
                               options: FFButtonOptions(

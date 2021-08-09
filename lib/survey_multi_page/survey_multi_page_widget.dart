@@ -1,10 +1,10 @@
 import '../auth/auth_util.dart';
-import '../backend/api_requests/api_calls.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
+import '../survey_total/survey_total_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -20,6 +20,7 @@ class SurveyMultiPageWidget extends StatefulWidget {
 }
 
 class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
+  SurveyRecord social_none;
   final pageViewController = PageController();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -131,7 +132,7 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                               padding: EdgeInsets.fromLTRB(
                                                   25, 0, 25, 20),
                                               child: Text(
-                                                'Instagram, Facebook, TikTok, Twitter, \\n LinkedIn, WhatsApp, Messenger, etc.',
+                                                'Instagram, Facebook, TikTok, Twitter, LinkedIn, WhatsApp, Messenger, etc.',
                                                 textAlign: TextAlign.center,
                                                 style: FlutterFlowTheme
                                                     .bodyText1
@@ -153,12 +154,20 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                             EdgeInsets.fromLTRB(0, 0, 0, 15),
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            final surveyUpdateData =
+                                            final surveyCreateData =
                                                 createSurveyRecordData(
-                                              answer1: 0,
+                                              answer1: 1,
                                             );
-                                            await currentUserReference
-                                                .update(surveyUpdateData);
+                                            final surveyRecordReference =
+                                                SurveyRecord.collection.doc();
+                                            await surveyRecordReference
+                                                .set(surveyCreateData);
+                                            social_none = SurveyRecord
+                                                .getDocumentFromData(
+                                                    surveyCreateData,
+                                                    surveyRecordReference);
+
+                                            setState(() {});
                                           },
                                           text:
                                               'None                                                          ',
@@ -188,12 +197,13 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                             EdgeInsets.fromLTRB(0, 0, 0, 15),
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            final surveyUpdateData =
+                                            final surveyCreateData =
                                                 createSurveyRecordData(
                                               answer2: 2,
                                             );
-                                            await currentUserReference
-                                                .update(surveyUpdateData);
+                                            await SurveyRecord.collection
+                                                .doc()
+                                                .set(surveyCreateData);
                                           },
                                           text:
                                               'A little                                 Up to 1hr/day',
@@ -223,12 +233,13 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                             EdgeInsets.fromLTRB(0, 0, 0, 15),
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            final surveyUpdateData =
+                                            final surveyCreateData =
                                                 createSurveyRecordData(
                                               answer3: 3,
                                             );
-                                            await currentUserReference
-                                                .update(surveyUpdateData);
+                                            await SurveyRecord.collection
+                                                .doc()
+                                                .set(surveyCreateData);
                                           },
                                           text:
                                               'A fair bit                                 1 - 2hrs/day',
@@ -255,12 +266,13 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                       ),
                                       FFButtonWidget(
                                         onPressed: () async {
-                                          final surveyUpdateData =
+                                          final surveyCreateData =
                                               createSurveyRecordData(
                                             answer4: 4,
                                           );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                          await SurveyRecord.collection
+                                              .doc()
+                                              .set(surveyCreateData);
                                         },
                                         text:
                                             'A lot                         More than 2hrs/day ',
@@ -384,13 +396,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer5: 5,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'None                                                          ',
@@ -416,13 +423,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer6: 0,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'A little                                 Up to 1hr/day',
@@ -448,13 +450,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer7: 7,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'A fair bit                                 1 - 2hrs/day',
@@ -478,13 +475,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                       ),
                                     ),
                                     FFButtonWidget(
-                                      onPressed: () async {
-                                        final surveyUpdateData =
-                                            createSurveyRecordData(
-                                          answer8: 8,
-                                        );
-                                        await currentUserReference
-                                            .update(surveyUpdateData);
+                                      onPressed: () {
+                                        print('Button pressed ...');
                                       },
                                       text:
                                           'A lot                         More than 2hrs/day ',
@@ -606,13 +598,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer9: 9,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'None                                                          ',
@@ -638,13 +625,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer10: 10,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'A little                                 Up to 1hr/day',
@@ -670,13 +652,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer11: 11,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'A fair bit                                 1 - 2hrs/day',
@@ -700,13 +677,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                       ),
                                     ),
                                     FFButtonWidget(
-                                      onPressed: () async {
-                                        final surveyUpdateData =
-                                            createSurveyRecordData(
-                                          answer12: 12,
-                                        );
-                                        await currentUserReference
-                                            .update(surveyUpdateData);
+                                      onPressed: () {
+                                        print('Button pressed ...');
                                       },
                                       text:
                                           'A lot                         More than 2hrs/day ',
@@ -828,13 +800,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer13: 13,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'None                                                          ',
@@ -860,13 +827,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer14: 14,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'A little                                 Up to 1hr/day',
@@ -892,13 +854,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer15: 15,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'A fair bit                                 1 - 2hrs/day',
@@ -922,13 +879,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                       ),
                                     ),
                                     FFButtonWidget(
-                                      onPressed: () async {
-                                        final surveyUpdateData =
-                                            createSurveyRecordData(
-                                          answer16: 16,
-                                        );
-                                        await currentUserReference
-                                            .update(surveyUpdateData);
+                                      onPressed: () {
+                                        print('Button pressed ...');
                                       },
                                       text:
                                           'A lot                         More than 2hrs/day ',
@@ -1050,13 +1002,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer17: 17,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'None                                                          ',
@@ -1082,13 +1029,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer18: 18,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'A little                                 Up to 1hr/day',
@@ -1114,13 +1056,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer19: 19,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'A fair bit                                 1 - 2hrs/day',
@@ -1144,13 +1081,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                       ),
                                     ),
                                     FFButtonWidget(
-                                      onPressed: () async {
-                                        final surveyUpdateData =
-                                            createSurveyRecordData(
-                                          answer20: 20,
-                                        );
-                                        await currentUserReference
-                                            .update(surveyUpdateData);
+                                      onPressed: () {
+                                        print('Button pressed ...');
                                       },
                                       text:
                                           'A lot                         More than 2hrs/day ',
@@ -1272,13 +1204,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer21: 21,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'None                                                          ',
@@ -1304,13 +1231,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer22: 22,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'A little                                 Up to 1hr/day',
@@ -1336,13 +1258,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyUpdateData =
-                                              createSurveyRecordData(
-                                            answer23: 23,
-                                          );
-                                          await currentUserReference
-                                              .update(surveyUpdateData);
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             'A fair bit                                 1 - 2hrs/day',
@@ -1366,13 +1283,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                       ),
                                     ),
                                     FFButtonWidget(
-                                      onPressed: () async {
-                                        final surveyUpdateData =
-                                            createSurveyRecordData(
-                                          answer24: 24,
-                                        );
-                                        await currentUserReference
-                                            .update(surveyUpdateData);
+                                      onPressed: () {
+                                        print('Button pressed ...');
                                       },
                                       text:
                                           'A lot                         More than 2hrs/day ',
@@ -1431,7 +1343,7 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                             padding: EdgeInsets.fromLTRB(
                                                 20, 0, 20, 10),
                                             child: Text(
-                                              'Your estimated digital carbon footprint is',
+                                              'Find out your results',
                                               textAlign: TextAlign.center,
                                               style: FlutterFlowTheme.title1
                                                   .override(
@@ -1464,42 +1376,19 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                FutureBuilder<dynamic>(
-                                                  future: getSurveyTotalCall(),
-                                                  builder: (context, snapshot) {
-                                                    // Customize what your widget looks like when it's loading.
-                                                    if (!snapshot.hasData) {
-                                                      return Center(
-                                                        child:
-                                                            LinearProgressIndicator(
-                                                          color:
-                                                              FlutterFlowTheme
-                                                                  .customColor4,
-                                                        ),
-                                                      );
-                                                    }
-                                                    final textGetSurveyTotalResponse =
-                                                        snapshot.data;
-                                                    return Text(
-                                                      getJsonField(
-                                                              textGetSurveyTotalResponse,
-                                                              r'expr=')
-                                                          .toString(),
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                            'Open Sans Condensed',
-                                                        color: FlutterFlowTheme
-                                                            .customColor5,
-                                                        fontSize: 50,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
-                                                    );
-                                                  },
+                                                Text(
+                                                  '',
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily:
+                                                        'Open Sans Condensed',
+                                                    color: FlutterFlowTheme
+                                                        .customColor5,
+                                                    fontSize: 50,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsets.fromLTRB(
@@ -1669,13 +1558,12 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                           await Navigator.push(
                                             context,
                                             MaterialPageRoute(
-                                              builder: (context) => NavBarPage(
-                                                  initialPage: 'Overview'),
+                                              builder: (context) =>
+                                                  SurveyTotalWidget(),
                                             ),
                                           );
                                         },
-                                        text:
-                                            'Take action now to reduce your footprint',
+                                        text: 'Click here for results',
                                         options: FFButtonOptions(
                                           width: 320,
                                           height: 55,
@@ -1700,8 +1588,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                         await Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) =>
-                                                SurveyMultiPageWidget(),
+                                            builder: (context) => NavBarPage(
+                                                initialPage: 'SurveyMultiPage'),
                                           ),
                                         );
                                       },
