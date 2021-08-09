@@ -1,4 +1,3 @@
-import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -11,12 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SurveyTotalWidget extends StatefulWidget {
-  SurveyTotalWidget({
-    Key key,
-    this.results,
-  }) : super(key: key);
-
-  final SurveyRecord results;
+  SurveyTotalWidget({Key key}) : super(key: key);
 
   @override
   _SurveyTotalWidgetState createState() => _SurveyTotalWidgetState();
@@ -75,41 +69,15 @@ class _SurveyTotalWidgetState extends State<SurveyTotalWidget> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                StreamBuilder<List<SurveyRecord>>(
-                  stream: querySurveyRecord(
-                    singleRecord: true,
+                Text(
+                  '',
+                  textAlign: TextAlign.center,
+                  style: FlutterFlowTheme.bodyText1.override(
+                    fontFamily: 'Open Sans Condensed',
+                    color: FlutterFlowTheme.customColor5,
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
                   ),
-                  builder: (context, snapshot) {
-                    // Customize what your widget looks like when it's loading.
-                    if (!snapshot.hasData) {
-                      return Center(
-                        child: LinearProgressIndicator(
-                          color: FlutterFlowTheme.customColor4,
-                        ),
-                      );
-                    }
-                    List<SurveyRecord> textSurveyRecordList = snapshot.data;
-                    // Customize what your widget looks like with no query results.
-                    if (snapshot.data.isEmpty) {
-                      return Container(
-                        height: 100,
-                        child: Center(
-                          child: Text('No results.'),
-                        ),
-                      );
-                    }
-                    final textSurveyRecord = textSurveyRecordList.first;
-                    return Text(
-                      '',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Open Sans Condensed',
-                        color: FlutterFlowTheme.customColor5,
-                        fontSize: 50,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    );
-                  },
                 ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
