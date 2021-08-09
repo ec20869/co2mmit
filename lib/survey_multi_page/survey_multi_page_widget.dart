@@ -3,7 +3,6 @@ import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../main.dart';
 import '../survey_total/survey_total_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +19,6 @@ class SurveyMultiPageWidget extends StatefulWidget {
 }
 
 class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
-  SurveyRecord social_none;
   final pageViewController = PageController();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -158,16 +156,9 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                                 createSurveyRecordData(
                                               answer1: 1,
                                             );
-                                            final surveyRecordReference =
-                                                SurveyRecord.collection.doc();
-                                            await surveyRecordReference
+                                            await SurveyRecord.collection
+                                                .doc()
                                                 .set(surveyCreateData);
-                                            social_none = SurveyRecord
-                                                .getDocumentFromData(
-                                                    surveyCreateData,
-                                                    surveyRecordReference);
-
-                                            setState(() {});
                                           },
                                           text:
                                               'None                                                          ',
@@ -1588,8 +1579,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                         await Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => NavBarPage(
-                                                initialPage: 'SurveyMultiPage'),
+                                            builder: (context) =>
+                                                SurveyMultiPageWidget(),
                                           ),
                                         );
                                       },
