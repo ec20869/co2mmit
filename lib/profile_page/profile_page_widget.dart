@@ -22,7 +22,6 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
   String uploadedFileUrl = '';
   TextEditingController textController1;
   TextEditingController textController2;
-  bool switchListTileValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -142,6 +141,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                             ),
                             child: Image.asset(
                               'assets/images/icons8-male-user-96.png',
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
@@ -311,30 +311,6 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                             )
                           ],
                         ),
-                      ),
-                      SwitchListTile(
-                        value: switchListTileValue ?? true,
-                        onChanged: (newValue) =>
-                            setState(() => switchListTileValue = newValue),
-                        title: Text(
-                          'Recieve Notifications',
-                          style: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Open Sans Condensed',
-                            color: FlutterFlowTheme.tertiaryColor,
-                          ),
-                        ),
-                        subtitle: Text(
-                          'Turn on notifications.',
-                          style: FlutterFlowTheme.bodyText2.override(
-                            fontFamily: 'Open Sans Condensed',
-                            color: FlutterFlowTheme.tertiaryColor,
-                          ),
-                        ),
-                        tileColor: FlutterFlowTheme.tertiaryColor,
-                        activeColor: FlutterFlowTheme.customColor5,
-                        activeTrackColor: Color(0x8D4B39EF),
-                        dense: false,
-                        controlAffinity: ListTileControlAffinity.trailing,
                       ),
                       Padding(
                         padding: EdgeInsets.fromLTRB(0, 20, 0, 0),

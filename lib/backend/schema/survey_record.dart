@@ -132,6 +132,14 @@ abstract class SurveyRecord
   String get phoneNumber;
 
   @nullable
+  @BuiltValueField(wireName: 'created_time_survey')
+  DateTime get createdTimeSurvey;
+
+  @nullable
+  @BuiltValueField(wireName: 'completed_by')
+  BuiltList<DocumentReference> get completedBy;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -164,7 +172,8 @@ abstract class SurveyRecord
     ..photoUrl = ''
     ..email = ''
     ..uid = ''
-    ..phoneNumber = '';
+    ..phoneNumber = ''
+    ..completedBy = ListBuilder();
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('survey');
@@ -215,6 +224,7 @@ Map<String, dynamic> createSurveyRecordData({
   String email,
   String uid,
   String phoneNumber,
+  DateTime createdTimeSurvey,
 }) =>
     serializers.toFirestore(
         SurveyRecord.serializer,
@@ -249,4 +259,6 @@ Map<String, dynamic> createSurveyRecordData({
           ..createdTime = createdTime
           ..email = email
           ..uid = uid
-          ..phoneNumber = phoneNumber));
+          ..phoneNumber = phoneNumber
+          ..createdTimeSurvey = createdTimeSurvey
+          ..completedBy = null));
