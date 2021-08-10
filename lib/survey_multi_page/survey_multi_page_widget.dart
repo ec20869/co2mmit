@@ -1344,7 +1344,7 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Text(
-                                                  '[ results]',
+                                                  '[results]',
                                                   textAlign: TextAlign.center,
                                                   style: FlutterFlowTheme
                                                       .bodyText1
@@ -1361,7 +1361,7 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                                   padding: EdgeInsets.fromLTRB(
                                                       10, 0, 0, 0),
                                                   child: Text(
-                                                    't CO2e',
+                                                    'Tonnes',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme
                                                         .bodyText1
@@ -1387,7 +1387,7 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                       children: [
                                         Expanded(
                                           child: Text(
-                                            'OF CO2 EVERY YEAR',
+                                            'OF CO2e EVERY YEAR',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.bodyText1
                                                 .override(
