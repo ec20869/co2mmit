@@ -3,9 +3,11 @@ import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../survey_multi_page/survey_multi_page_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SurveyWelcomeWidget extends StatefulWidget {
   SurveyWelcomeWidget({Key key}) : super(key: key);
@@ -141,10 +143,10 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
                         onPressed: () async {
                           final surveyCreateData = createSurveyRecordData(
                             answer1: 0,
+                            answer2: 0,
                             answer3: 0,
                             answer4: 0,
                             answer5: 0,
-                            answer2: 0,
                             answer6: 0,
                             user: currentUserReference,
                           );
@@ -153,6 +155,12 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
                           await surveyRecordReference.set(surveyCreateData);
                           surveyresults = SurveyRecord.getDocumentFromData(
                               surveyCreateData, surveyRecordReference);
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SurveyMultiPageWidget(),
+                            ),
+                          );
 
                           setState(() {});
                         },

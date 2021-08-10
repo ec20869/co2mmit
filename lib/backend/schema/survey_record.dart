@@ -154,6 +154,24 @@ abstract class SurveyRecord
   int get answer6;
 
   @nullable
+  DocumentReference get question4;
+
+  @nullable
+  DocumentReference get question1;
+
+  @nullable
+  DocumentReference get question2;
+
+  @nullable
+  DocumentReference get question3;
+
+  @nullable
+  DocumentReference get question5;
+
+  @nullable
+  DocumentReference get question6;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -250,6 +268,12 @@ Map<String, dynamic> createSurveyRecordData({
   int answer4,
   int answer5,
   int answer6,
+  DocumentReference question4,
+  DocumentReference question1,
+  DocumentReference question2,
+  DocumentReference question3,
+  DocumentReference question5,
+  DocumentReference question6,
 }) =>
     serializers.toFirestore(
         SurveyRecord.serializer,
@@ -291,4 +315,10 @@ Map<String, dynamic> createSurveyRecordData({
           ..answer3 = answer3
           ..answer4 = answer4
           ..answer5 = answer5
-          ..answer6 = answer6));
+          ..answer6 = answer6
+          ..question4 = question4
+          ..question1 = question1
+          ..question2 = question2
+          ..question3 = question3
+          ..question5 = question5
+          ..question6 = question6));
