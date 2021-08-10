@@ -116,15 +116,7 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
                   final buttonUsersRecord = buttonUsersRecordList.first;
                   return FFButtonWidget(
                     onPressed: () async {
-                      final surveyCreateData = createSurveyRecordData(
-                        answer1: 0,
-                        answer2: 0,
-                        answer3: 0,
-                        answer4: 0,
-                        answer5: 0,
-                        answer6: 0,
-                        user: currentUserReference,
-                      );
+                      final surveyCreateData = createSurveyRecordData();
                       await SurveyRecord.collection.doc().set(surveyCreateData);
                       await Navigator.push(
                         context,
