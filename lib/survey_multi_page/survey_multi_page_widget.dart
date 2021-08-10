@@ -1,3 +1,4 @@
+import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -148,8 +149,10 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                         padding:
                                             EdgeInsets.fromLTRB(0, 0, 0, 15),
                                         child: FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            await getResultsCall(
+                                              results: 100,
+                                            );
                                           },
                                           text:
                                               'None                                                          ',
