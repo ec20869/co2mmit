@@ -268,12 +268,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                       return;
                                     }
 
-                                    await Navigator.push(
+                                    await Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             SurveyWelcomeWidget(),
                                       ),
+                                      (r) => false,
                                     );
                                   },
                                   text: 'Create Account',
