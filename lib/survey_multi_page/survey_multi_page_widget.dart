@@ -181,75 +181,38 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                           Padding(
                                             padding: EdgeInsets.fromLTRB(
                                                 0, 0, 0, 15),
-                                            child: StreamBuilder<
-                                                List<SurveyRecord>>(
-                                              stream: querySurveyRecord(
-                                                queryBuilder: (surveyRecord) =>
-                                                    surveyRecord.where(
-                                                        'answer_1',
-                                                        isEqualTo: 1),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child:
-                                                        LinearProgressIndicator(
-                                                      color: FlutterFlowTheme
-                                                          .customColor4,
-                                                    ),
-                                                  );
-                                                }
-                                                List<SurveyRecord>
-                                                    buttonSurveyRecordList =
-                                                    snapshot.data;
-                                                // Customize what your widget looks like with no query results.
-                                                if (snapshot.data.isEmpty) {
-                                                  return Container(
-                                                    height: 100,
-                                                    child: Center(
-                                                      child:
-                                                          Text('No results.'),
-                                                    ),
-                                                  );
-                                                }
-                                                final buttonSurveyRecord =
-                                                    buttonSurveyRecordList
-                                                        .first;
-                                                return FFButtonWidget(
-                                                  onPressed: () async {
-                                                    final surveyUpdateData =
-                                                        createSurveyRecordData();
-                                                    await buttonSurveyRecord
-                                                        .question1
-                                                        .update(
-                                                            surveyUpdateData);
-                                                  },
-                                                  text:
-                                                      'None                                                          ',
-                                                  options: FFButtonOptions(
-                                                    width: 320,
-                                                    height: 55,
-                                                    color: FlutterFlowTheme
-                                                        .customColor2,
-                                                    textStyle: FlutterFlowTheme
-                                                        .subtitle2
-                                                        .override(
-                                                      fontFamily:
-                                                          'Open Sans Condensed',
-                                                      color: Colors.white,
-                                                      fontSize: 20,
-                                                    ),
-                                                    borderSide: BorderSide(
-                                                      color: FlutterFlowTheme
-                                                          .customColor1,
-                                                      width: 1,
-                                                    ),
-                                                    borderRadius: 5,
-                                                  ),
+                                            child: FFButtonWidget(
+                                              onPressed: () async {
+                                                final surveyUpdateData =
+                                                    createSurveyRecordData(
+                                                  answer1: 0,
                                                 );
+                                                await surveyMultiPageSurveyRecord
+                                                    .question1
+                                                    .update(surveyUpdateData);
                                               },
+                                              text:
+                                                  'None                                                          ',
+                                              options: FFButtonOptions(
+                                                width: 320,
+                                                height: 55,
+                                                color: FlutterFlowTheme
+                                                    .customColor2,
+                                                textStyle: FlutterFlowTheme
+                                                    .subtitle2
+                                                    .override(
+                                                  fontFamily:
+                                                      'Open Sans Condensed',
+                                                  color: Colors.white,
+                                                  fontSize: 20,
+                                                ),
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme
+                                                      .customColor1,
+                                                  width: 1,
+                                                ),
+                                                borderRadius: 5,
+                                              ),
                                             ),
                                           ),
                                           Padding(
@@ -258,7 +221,9 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 final surveyUpdateData =
-                                                    createSurveyRecordData();
+                                                    createSurveyRecordData(
+                                                  answer2: 2,
+                                                );
                                                 await surveyMultiPageSurveyRecord
                                                     .question1
                                                     .update(surveyUpdateData);
@@ -290,142 +255,73 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                           Padding(
                                             padding: EdgeInsets.fromLTRB(
                                                 0, 0, 0, 15),
-                                            child: StreamBuilder<
-                                                List<SurveyRecord>>(
-                                              stream: querySurveyRecord(
-                                                queryBuilder: (surveyRecord) =>
-                                                    surveyRecord.where(
-                                                        'answer_3',
-                                                        isEqualTo: 3),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child:
-                                                        LinearProgressIndicator(
-                                                      color: FlutterFlowTheme
-                                                          .customColor4,
-                                                    ),
-                                                  );
-                                                }
-                                                List<SurveyRecord>
-                                                    buttonSurveyRecordList =
-                                                    snapshot.data;
-                                                // Customize what your widget looks like with no query results.
-                                                if (snapshot.data.isEmpty) {
-                                                  return Container(
-                                                    height: 100,
-                                                    child: Center(
-                                                      child:
-                                                          Text('No results.'),
-                                                    ),
-                                                  );
-                                                }
-                                                final buttonSurveyRecord =
-                                                    buttonSurveyRecordList
-                                                        .first;
-                                                return FFButtonWidget(
-                                                  onPressed: () async {
-                                                    final surveyUpdateData =
-                                                        createSurveyRecordData();
-                                                    await surveyMultiPageSurveyRecord
-                                                        .question1
-                                                        .update(
-                                                            surveyUpdateData);
-                                                  },
-                                                  text:
-                                                      'A fair bit                                 1 - 2hrs/day',
-                                                  options: FFButtonOptions(
-                                                    width: 320,
-                                                    height: 55,
-                                                    color: FlutterFlowTheme
-                                                        .customColor2,
-                                                    textStyle: FlutterFlowTheme
-                                                        .subtitle2
-                                                        .override(
-                                                      fontFamily:
-                                                          'Open Sans Condensed',
-                                                      color: Colors.white,
-                                                      fontSize: 20,
-                                                    ),
-                                                    borderSide: BorderSide(
-                                                      color: FlutterFlowTheme
-                                                          .customColor1,
-                                                      width: 1,
-                                                    ),
-                                                    borderRadius: 5,
-                                                  ),
+                                            child: FFButtonWidget(
+                                              onPressed: () async {
+                                                final surveyUpdateData =
+                                                    createSurveyRecordData(
+                                                  answer3: 3,
                                                 );
+                                                await surveyMultiPageSurveyRecord
+                                                    .question1
+                                                    .update(surveyUpdateData);
                                               },
+                                              text:
+                                                  'A fair bit                                 1 - 2hrs/day',
+                                              options: FFButtonOptions(
+                                                width: 320,
+                                                height: 55,
+                                                color: FlutterFlowTheme
+                                                    .customColor2,
+                                                textStyle: FlutterFlowTheme
+                                                    .subtitle2
+                                                    .override(
+                                                  fontFamily:
+                                                      'Open Sans Condensed',
+                                                  color: Colors.white,
+                                                  fontSize: 20,
+                                                ),
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme
+                                                      .customColor1,
+                                                  width: 1,
+                                                ),
+                                                borderRadius: 5,
+                                              ),
                                             ),
                                           ),
-                                          StreamBuilder<List<SurveyRecord>>(
-                                            stream: querySurveyRecord(
-                                              queryBuilder: (surveyRecord) =>
-                                                  surveyRecord.where('answer_4',
-                                                      isEqualTo: 4),
-                                              singleRecord: true,
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child:
-                                                      LinearProgressIndicator(
-                                                    color: FlutterFlowTheme
-                                                        .customColor4,
-                                                  ),
-                                                );
-                                              }
-                                              List<SurveyRecord>
-                                                  buttonSurveyRecordList =
-                                                  snapshot.data;
-                                              // Customize what your widget looks like with no query results.
-                                              if (snapshot.data.isEmpty) {
-                                                return Container(
-                                                  height: 100,
-                                                  child: Center(
-                                                    child: Text('No results.'),
-                                                  ),
-                                                );
-                                              }
-                                              final buttonSurveyRecord =
-                                                  buttonSurveyRecordList.first;
-                                              return FFButtonWidget(
-                                                onPressed: () async {
-                                                  final surveyUpdateData =
-                                                      createSurveyRecordData();
-                                                  await surveyMultiPageSurveyRecord
-                                                      .question1
-                                                      .update(surveyUpdateData);
-                                                },
-                                                text:
-                                                    'A lot                         More than 2hrs/day ',
-                                                options: FFButtonOptions(
-                                                  width: 320,
-                                                  height: 55,
-                                                  color: FlutterFlowTheme
-                                                      .customColor2,
-                                                  textStyle: FlutterFlowTheme
-                                                      .subtitle2
-                                                      .override(
-                                                    fontFamily:
-                                                        'Open Sans Condensed',
-                                                    color: FlutterFlowTheme
-                                                        .tertiaryColor,
-                                                    fontSize: 20,
-                                                  ),
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme
-                                                        .customColor1,
-                                                    width: 1,
-                                                  ),
-                                                  borderRadius: 5,
-                                                ),
+                                          FFButtonWidget(
+                                            onPressed: () async {
+                                              final surveyUpdateData =
+                                                  createSurveyRecordData(
+                                                answer4: 4,
                                               );
+                                              await surveyMultiPageSurveyRecord
+                                                  .question1
+                                                  .update(surveyUpdateData);
                                             },
+                                            text:
+                                                'A lot                         More than 2hrs/day ',
+                                            options: FFButtonOptions(
+                                              width: 320,
+                                              height: 55,
+                                              color:
+                                                  FlutterFlowTheme.customColor2,
+                                              textStyle: FlutterFlowTheme
+                                                  .subtitle2
+                                                  .override(
+                                                fontFamily:
+                                                    'Open Sans Condensed',
+                                                color: FlutterFlowTheme
+                                                    .tertiaryColor,
+                                                fontSize: 20,
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: FlutterFlowTheme
+                                                    .customColor1,
+                                                width: 1,
+                                              ),
+                                              borderRadius: 5,
+                                            ),
                                           )
                                         ],
                                       ),
