@@ -52,7 +52,7 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
                     child: Text(
-                      'Welcome to Co2mmit, your personal digital carbon tracker',
+                      'Welcome to your personal digital carbon tracker',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.title1.override(
                         fontFamily: 'Open Sans Condensed',
@@ -70,7 +70,7 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(25, 0, 25, 20),
+                    padding: EdgeInsets.fromLTRB(40, 10, 40, 20),
                     child: Text(
                       'To get started please complete our short survey on your digital habits',
                       textAlign: TextAlign.center,
