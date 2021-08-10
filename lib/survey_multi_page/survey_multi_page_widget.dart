@@ -2,7 +2,7 @@ import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../survey_total/survey_total_widget.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -1310,7 +1310,7 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                             padding: EdgeInsets.fromLTRB(
                                                 20, 0, 20, 10),
                                             child: Text(
-                                              'Find out your results',
+                                              'Your estimated digital carbon footprint is',
                                               textAlign: TextAlign.center,
                                               style: FlutterFlowTheme.title1
                                                   .override(
@@ -1525,12 +1525,13 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                           await Navigator.push(
                                             context,
                                             MaterialPageRoute(
-                                              builder: (context) =>
-                                                  SurveyTotalWidget(),
+                                              builder: (context) => NavBarPage(
+                                                  initialPage: 'Overview'),
                                             ),
                                           );
                                         },
-                                        text: 'Click here for results',
+                                        text:
+                                            'Take action now to reduce your footprint',
                                         options: FFButtonOptions(
                                           width: 320,
                                           height: 55,

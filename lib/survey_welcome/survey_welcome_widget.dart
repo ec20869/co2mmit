@@ -70,9 +70,9 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(50, 10, 50, 40),
+                    padding: EdgeInsets.fromLTRB(60, 20, 60, 40),
                     child: Text(
-                      'To get started please complete a short survey so we can measure your current digital carbon footprint',
+                      'To get started please complete a short questionnaire so we can measure your current digital carbon footprint',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.bodyText1.override(
                         fontFamily: 'Open Sans Condensed',
@@ -95,7 +95,7 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
                 );
               },
               text:
-                  '   Start survey now                                                  ',
+                  '   Start survey now                                         ',
               options: FFButtonOptions(
                 width: 150,
                 height: 55,
