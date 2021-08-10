@@ -1,10 +1,7 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../survey_multi_page/survey_multi_page_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -90,60 +87,32 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
-              child: StreamBuilder<List<UsersRecord>>(
-                stream: queryUsersRecord(
-                  singleRecord: true,
-                ),
-                builder: (context, snapshot) {
-                  // Customize what your widget looks like when it's loading.
-                  if (!snapshot.hasData) {
-                    return Center(
-                      child: LinearProgressIndicator(
-                        color: FlutterFlowTheme.customColor4,
-                      ),
-                    );
-                  }
-                  List<UsersRecord> buttonUsersRecordList = snapshot.data;
-                  // Customize what your widget looks like with no query results.
-                  if (snapshot.data.isEmpty) {
-                    return Container(
-                      height: 100,
-                      child: Center(
-                        child: Text('No results.'),
-                      ),
-                    );
-                  }
-                  final buttonUsersRecord = buttonUsersRecordList.first;
-                  return FFButtonWidget(
-                    onPressed: () async {
-                      final surveyCreateData = createSurveyRecordData();
-                      await SurveyRecord.collection.doc().set(surveyCreateData);
-                      await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SurveyMultiPageWidget(),
-                        ),
-                      );
-                    },
-                    text:
-                        'Start Survey Now                                                      ',
-                    options: FFButtonOptions(
-                      width: 320,
-                      height: 55,
-                      color: FlutterFlowTheme.customColor2,
-                      textStyle: FlutterFlowTheme.subtitle2.override(
-                        fontFamily: 'Open Sans Condensed',
-                        color: Colors.white,
-                        fontSize: 20,
-                      ),
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.customColor1,
-                        width: 1,
-                      ),
-                      borderRadius: 5,
+              child: FFButtonWidget(
+                onPressed: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SurveyMultiPageWidget(),
                     ),
                   );
                 },
+                text:
+                    'Start Survey Now                                                      ',
+                options: FFButtonOptions(
+                  width: 320,
+                  height: 55,
+                  color: FlutterFlowTheme.customColor2,
+                  textStyle: FlutterFlowTheme.subtitle2.override(
+                    fontFamily: 'Open Sans Condensed',
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.customColor1,
+                    width: 1,
+                  ),
+                  borderRadius: 5,
+                ),
               ),
             )
           ],
