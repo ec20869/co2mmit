@@ -1,11 +1,9 @@
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../survey_multi_page/survey_multi_page_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 
 class SplashscreenWidget extends StatefulWidget {
   SplashscreenWidget({Key key}) : super(key: key);
@@ -79,22 +77,12 @@ class _SplashscreenWidgetState extends State<SplashscreenWidget>
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  InkWell(
-                    onTap: () async {
-                      await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SurveyMultiPageWidget(),
-                        ),
-                      );
-                    },
-                    child: Text(
-                      'DIGITAL CARBON FOOTPRINT TRACKER',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.title2.override(
-                        fontFamily: 'Open Sans Condensed',
-                        color: FlutterFlowTheme.customColor6,
-                      ),
+                  Text(
+                    'DIGITAL CARBON FOOTPRINT TRACKER',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.title2.override(
+                      fontFamily: 'Open Sans Condensed',
+                      color: FlutterFlowTheme.customColor6,
                     ),
                   )
                 ],
