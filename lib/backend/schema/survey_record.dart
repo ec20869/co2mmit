@@ -136,24 +136,6 @@ abstract class SurveyRecord
   DateTime get createdTimeSurvey;
 
   @nullable
-  int get answer1;
-
-  @nullable
-  int get answer2;
-
-  @nullable
-  int get answer3;
-
-  @nullable
-  int get answer4;
-
-  @nullable
-  int get answer5;
-
-  @nullable
-  int get answer6;
-
-  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -186,13 +168,7 @@ abstract class SurveyRecord
     ..photoUrl = ''
     ..email = ''
     ..uid = ''
-    ..phoneNumber = ''
-    ..answer1 = 0
-    ..answer2 = 0
-    ..answer3 = 0
-    ..answer4 = 0
-    ..answer5 = 0
-    ..answer6 = 0;
+    ..phoneNumber = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('survey');
@@ -244,12 +220,6 @@ Map<String, dynamic> createSurveyRecordData({
   String uid,
   String phoneNumber,
   DateTime createdTimeSurvey,
-  int answer1,
-  int answer2,
-  int answer3,
-  int answer4,
-  int answer5,
-  int answer6,
 }) =>
     serializers.toFirestore(
         SurveyRecord.serializer,
@@ -285,10 +255,4 @@ Map<String, dynamic> createSurveyRecordData({
           ..email = email
           ..uid = uid
           ..phoneNumber = phoneNumber
-          ..createdTimeSurvey = createdTimeSurvey
-          ..answer1 = answer1
-          ..answer2 = answer2
-          ..answer3 = answer3
-          ..answer4 = answer4
-          ..answer5 = answer5
-          ..answer6 = answer6));
+          ..createdTimeSurvey = createdTimeSurvey));
