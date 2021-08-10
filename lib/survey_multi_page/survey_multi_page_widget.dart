@@ -12,7 +12,22 @@ import 'package:page_transition/page_transition.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class SurveyMultiPageWidget extends StatefulWidget {
-  SurveyMultiPageWidget({Key key}) : super(key: key);
+  SurveyMultiPageWidget({
+    Key key,
+    this.answer1,
+    this.answer2,
+    this.answer3,
+    this.answer4,
+    this.answer5,
+    this.answer6,
+  }) : super(key: key);
+
+  final DocumentReference answer1;
+  final DocumentReference answer2;
+  final DocumentReference answer3;
+  final DocumentReference answer4;
+  final DocumentReference answer5;
+  final DocumentReference answer6;
 
   @override
   _SurveyMultiPageWidgetState createState() => _SurveyMultiPageWidgetState();
@@ -54,151 +69,225 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                 ),
                                 child: Align(
                                   alignment: Alignment(0, 0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
+                                  child: InkWell(
+                                    onTap: () async {
+                                      final surveyUpdateData =
+                                          createSurveyRecordData(
+                                        answer1: 3,
+                                      );
+                                      await widget.answer1
+                                          .update(surveyUpdateData);
+                                    },
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Align(
+                                                alignment: Alignment(0, 0),
+                                                child: Padding(
+                                                  padding: EdgeInsets.fromLTRB(
+                                                      0, 20, 0, 20),
+                                                  child: Image.asset(
+                                                    'assets/images/Logo@3x.png',
+                                                    width: 200,
+                                                    height: 100,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsets.fromLTRB(
+                                                    0, 0, 0, 20),
+                                                child: FaIcon(
+                                                  FontAwesomeIcons.thumbsUp,
+                                                  color: FlutterFlowTheme
+                                                      .tertiaryColor,
+                                                  size: 27,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Align(
-                                              alignment: Alignment(0, 0),
+                                            Expanded(
                                               child: Padding(
                                                 padding: EdgeInsets.fromLTRB(
-                                                    0, 20, 0, 20),
-                                                child: Image.asset(
-                                                  'assets/images/Logo@3x.png',
-                                                  width: 200,
-                                                  height: 100,
-                                                  fit: BoxFit.cover,
+                                                    20, 0, 20, 10),
+                                                child: Text(
+                                                  'How much time do you spend on social media?',
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.title1
+                                                      .override(
+                                                    fontFamily:
+                                                        'Open Sans Condensed',
+                                                    color: FlutterFlowTheme
+                                                        .customColor4,
+                                                    fontSize: 33,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
                                                 ),
                                               ),
                                             )
                                           ],
                                         ),
-                                      ),
-                                      SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
+                                        Row(
                                           mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
                                           children: [
-                                            Padding(
-                                              padding: EdgeInsets.fromLTRB(
-                                                  0, 0, 0, 20),
-                                              child: FaIcon(
-                                                FontAwesomeIcons.thumbsUp,
-                                                color: FlutterFlowTheme
-                                                    .tertiaryColor,
-                                                size: 27,
+                                            Expanded(
+                                              child: Padding(
+                                                padding: EdgeInsets.fromLTRB(
+                                                    25, 0, 25, 20),
+                                                child: Text(
+                                                  'Instagram, Facebook, TikTok, Twitter, LinkedIn, WhatsApp, Messenger, etc.',
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily:
+                                                        'Open Sans Condensed',
+                                                    color: FlutterFlowTheme
+                                                        .customColor5,
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                ),
                                               ),
                                             )
                                           ],
                                         ),
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Expanded(
-                                            child: Padding(
-                                              padding: EdgeInsets.fromLTRB(
-                                                  20, 0, 20, 10),
-                                              child: Text(
-                                                'How much time do you spend on social media?',
-                                                textAlign: TextAlign.center,
-                                                style: FlutterFlowTheme.title1
-                                                    .override(
-                                                  fontFamily:
-                                                      'Open Sans Condensed',
-                                                  color: FlutterFlowTheme
-                                                      .customColor4,
-                                                  fontSize: 33,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Expanded(
-                                            child: Padding(
-                                              padding: EdgeInsets.fromLTRB(
-                                                  25, 0, 25, 20),
-                                              child: Text(
-                                                'Instagram, Facebook, TikTok, Twitter, LinkedIn, WhatsApp, Messenger, etc.',
-                                                textAlign: TextAlign.center,
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily:
-                                                      'Open Sans Condensed',
-                                                  color: FlutterFlowTheme
-                                                      .customColor5,
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.fromLTRB(0, 0, 0, 15),
-                                        child: FFButtonWidget(
-                                          onPressed: () async {
-                                            final surveyCreateData = {
-                                              ...createSurveyRecordData(
+                                        Padding(
+                                          padding:
+                                              EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              final surveyUpdateData =
+                                                  createSurveyRecordData(
                                                 answer1: 1,
+                                              );
+                                              await widget.answer1
+                                                  .update(surveyUpdateData);
+                                            },
+                                            text:
+                                                'None                                                          ',
+                                            options: FFButtonOptions(
+                                              width: 320,
+                                              height: 55,
+                                              color:
+                                                  FlutterFlowTheme.customColor2,
+                                              textStyle: FlutterFlowTheme
+                                                  .subtitle2
+                                                  .override(
+                                                fontFamily:
+                                                    'Open Sans Condensed',
+                                                color: Colors.white,
+                                                fontSize: 20,
                                               ),
-                                              'completed_by':
-                                                  FieldValue.arrayUnion(
-                                                      [currentUserReference]),
-                                            };
-                                            await SurveyRecord.collection
-                                                .doc()
-                                                .set(surveyCreateData);
-                                          },
-                                          text:
-                                              'None                                                          ',
-                                          options: FFButtonOptions(
-                                            width: 320,
-                                            height: 55,
-                                            color:
-                                                FlutterFlowTheme.customColor2,
-                                            textStyle: FlutterFlowTheme
-                                                .subtitle2
-                                                .override(
-                                              fontFamily: 'Open Sans Condensed',
-                                              color: Colors.white,
-                                              fontSize: 20,
+                                              borderSide: BorderSide(
+                                                color: FlutterFlowTheme
+                                                    .customColor1,
+                                                width: 1,
+                                              ),
+                                              borderRadius: 5,
                                             ),
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.customColor1,
-                                              width: 1,
-                                            ),
-                                            borderRadius: 5,
                                           ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.fromLTRB(0, 0, 0, 15),
-                                        child: FFButtonWidget(
+                                        Padding(
+                                          padding:
+                                              EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              final surveyUpdateData =
+                                                  createSurveyRecordData(
+                                                answer1: 0,
+                                              );
+                                              await widget.answer1
+                                                  .update(surveyUpdateData);
+                                            },
+                                            text:
+                                                'A little                                 Up to 1hr/day',
+                                            options: FFButtonOptions(
+                                              width: 320,
+                                              height: 55,
+                                              color:
+                                                  FlutterFlowTheme.customColor2,
+                                              textStyle: FlutterFlowTheme
+                                                  .subtitle2
+                                                  .override(
+                                                fontFamily:
+                                                    'Open Sans Condensed',
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: FlutterFlowTheme
+                                                    .customColor1,
+                                                width: 1,
+                                              ),
+                                              borderRadius: 5,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              final surveyUpdateData =
+                                                  createSurveyRecordData();
+                                              await widget.answer3
+                                                  .update(surveyUpdateData);
+                                            },
+                                            text:
+                                                'A fair bit                                 1 - 2hrs/day',
+                                            options: FFButtonOptions(
+                                              width: 320,
+                                              height: 55,
+                                              color:
+                                                  FlutterFlowTheme.customColor2,
+                                              textStyle: FlutterFlowTheme
+                                                  .subtitle2
+                                                  .override(
+                                                fontFamily:
+                                                    'Open Sans Condensed',
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: FlutterFlowTheme
+                                                    .customColor1,
+                                                width: 1,
+                                              ),
+                                              borderRadius: 5,
+                                            ),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
                                           onPressed: () async {
-                                            final usersUpdateData =
-                                                createUsersRecordData();
-                                            await currentUserReference
-                                                .update(usersUpdateData);
+                                            final surveyUpdateData =
+                                                createSurveyRecordData(
+                                              answer1: 4,
+                                            );
+                                            await widget.answer1
+                                                .update(surveyUpdateData);
                                           },
                                           text:
-                                              'A little                                 Up to 1hr/day',
+                                              'A lot                         More than 2hrs/day ',
                                           options: FFButtonOptions(
                                             width: 320,
                                             height: 55,
@@ -208,7 +297,8 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                                 .subtitle2
                                                 .override(
                                               fontFamily: 'Open Sans Condensed',
-                                              color: Colors.white,
+                                              color: FlutterFlowTheme
+                                                  .tertiaryColor,
                                               fontSize: 20,
                                             ),
                                             borderSide: BorderSide(
@@ -218,73 +308,9 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                             ),
                                             borderRadius: 5,
                                           ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.fromLTRB(0, 0, 0, 15),
-                                        child: FFButtonWidget(
-                                          onPressed: () async {
-                                            final usersUpdateData =
-                                                createUsersRecordData();
-                                            await currentUserReference
-                                                .update(usersUpdateData);
-                                          },
-                                          text:
-                                              'A fair bit                                 1 - 2hrs/day',
-                                          options: FFButtonOptions(
-                                            width: 320,
-                                            height: 55,
-                                            color:
-                                                FlutterFlowTheme.customColor2,
-                                            textStyle: FlutterFlowTheme
-                                                .subtitle2
-                                                .override(
-                                              fontFamily: 'Open Sans Condensed',
-                                              color: Colors.white,
-                                              fontSize: 20,
-                                            ),
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.customColor1,
-                                              width: 1,
-                                            ),
-                                            borderRadius: 5,
-                                          ),
-                                        ),
-                                      ),
-                                      FFButtonWidget(
-                                        onPressed: () async {
-                                          final surveyCreateData =
-                                              createSurveyRecordData(
-                                            answer4: 4,
-                                          );
-                                          await SurveyRecord.collection
-                                              .doc()
-                                              .set(surveyCreateData);
-                                        },
-                                        text:
-                                            'A lot                         More than 2hrs/day ',
-                                        options: FFButtonOptions(
-                                          width: 320,
-                                          height: 55,
-                                          color: FlutterFlowTheme.customColor2,
-                                          textStyle: FlutterFlowTheme.subtitle2
-                                              .override(
-                                            fontFamily: 'Open Sans Condensed',
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
-                                            fontSize: 20,
-                                          ),
-                                          borderSide: BorderSide(
-                                            color:
-                                                FlutterFlowTheme.customColor1,
-                                            width: 1,
-                                          ),
-                                          borderRadius: 5,
-                                        ),
-                                      )
-                                    ],
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
