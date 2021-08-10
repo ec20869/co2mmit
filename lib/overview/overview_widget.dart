@@ -93,7 +93,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(25, 0, 18, 0),
                       child: Text(
-                        '8t CO2e',
+                        '6.5t CO2e*',
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Open Sans Condensed',
                           color: FlutterFlowTheme.customColor5,
@@ -110,7 +110,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
                       child: Text(
-                        '5t CO2e',
+                        '5t CO2e*',
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Open Sans Condensed',
                           color: FlutterFlowTheme.customColor5,
@@ -254,6 +254,30 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                   width: 1,
                 ),
                 borderRadius: 5,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Align(
+                    alignment: Alignment(0, 0),
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
+                      child: Text(
+                        '* Average carbon footprint overall (inclusive all emissions categories)',
+                        textAlign: TextAlign.justify,
+                        style: FlutterFlowTheme.bodyText1.override(
+                          fontFamily: 'Open Sans Condensed',
+                          color: FlutterFlowTheme.customColor5,
+                          fontSize: 12,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
             )
           ],
