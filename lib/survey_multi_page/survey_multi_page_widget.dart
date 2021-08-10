@@ -1344,7 +1344,7 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Text(
-                                                  '',
+                                                  '[ results]',
                                                   textAlign: TextAlign.center,
                                                   style: FlutterFlowTheme
                                                       .bodyText1
@@ -1361,7 +1361,7 @@ class _SurveyMultiPageWidgetState extends State<SurveyMultiPageWidget> {
                                                   padding: EdgeInsets.fromLTRB(
                                                       10, 0, 0, 0),
                                                   child: Text(
-                                                    'KG',
+                                                    't CO2e',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme
                                                         .bodyText1

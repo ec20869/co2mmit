@@ -140,7 +140,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                               shape: BoxShape.circle,
                             ),
                             child: Image.asset(
-                              'assets/images/',
+                              'assets/images/icons8-male-user-96.png',
                               fit: BoxFit.contain,
                             ),
                           ),

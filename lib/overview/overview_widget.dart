@@ -75,7 +75,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
                       child: Text(
-                        '65 KG',
+                        '[ ]t CO2e',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Open Sans Condensed',
@@ -93,7 +93,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(25, 0, 18, 0),
                       child: Text(
-                        '70 KG',
+                        '8t CO2e',
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Open Sans Condensed',
                           color: FlutterFlowTheme.customColor5,
@@ -110,7 +110,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
                       child: Text(
-                        '50 KG',
+                        '5t CO2e',
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Open Sans Condensed',
                           color: FlutterFlowTheme.customColor5,
