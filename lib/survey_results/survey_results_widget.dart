@@ -2,7 +2,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
-import '../survey_multi_page/survey_multi_page_widget.dart';
+import '../survey_welcome/survey_welcome_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -79,7 +79,7 @@ class _SurveyResultsWidgetState extends State<SurveyResultsWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '[results]',
+                          '[result]',
                           textAlign: TextAlign.center,
                           style: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Open Sans Condensed',
@@ -263,7 +263,7 @@ class _SurveyResultsWidgetState extends State<SurveyResultsWidget> {
                 await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SurveyMultiPageWidget(),
+                    builder: (context) => SurveyWelcomeWidget(),
                   ),
                 );
               },

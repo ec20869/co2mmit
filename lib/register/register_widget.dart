@@ -298,65 +298,74 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 ),
                               ),
                               Expanded(
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Expanded(
-                                      child: Align(
-                                        alignment: Alignment(0, 1),
-                                        child: Text(
-                                          'Already have an account?',
-                                          textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.subtitle2
-                                              .override(
-                                            fontFamily: 'Open Sans Condensed',
-                                            color:
-                                                FlutterFlowTheme.customColor5,
-                                            fontSize: 18,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: Alignment(0, 1),
-                                      child: Padding(
-                                        padding:
-                                            EdgeInsets.fromLTRB(0, 0, 20, 0),
-                                        child: FFButtonWidget(
-                                          onPressed: () async {
-                                            await Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    LoginWidget(),
+                                child: Align(
+                                  alignment: Alignment(0, 0),
+                                  child: Padding(
+                                    padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Expanded(
+                                          child: Align(
+                                            alignment: Alignment(0, 1),
+                                            child: Text(
+                                              'Already have an account?',
+                                              textAlign: TextAlign.start,
+                                              style: FlutterFlowTheme.subtitle2
+                                                  .override(
+                                                fontFamily:
+                                                    'Open Sans Condensed',
+                                                color: FlutterFlowTheme
+                                                    .customColor5,
+                                                fontSize: 18,
                                               ),
-                                            );
-                                          },
-                                          text: 'Login',
-                                          options: FFButtonOptions(
-                                            width: 100,
-                                            height: 23,
-                                            color:
-                                                FlutterFlowTheme.customColor2,
-                                            textStyle: FlutterFlowTheme
-                                                .subtitle2
-                                                .override(
-                                              fontFamily: 'Open Sans Condensed',
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w500,
                                             ),
-                                            borderSide: BorderSide(
-                                              color: Colors.transparent,
-                                            ),
-                                            borderRadius: 0,
                                           ),
                                         ),
-                                      ),
-                                    )
-                                  ],
+                                        Align(
+                                          alignment: Alignment(0, 1),
+                                          child: Padding(
+                                            padding: EdgeInsets.fromLTRB(
+                                                0, 0, 20, 0),
+                                            child: FFButtonWidget(
+                                              onPressed: () async {
+                                                await Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        LoginWidget(),
+                                                  ),
+                                                );
+                                              },
+                                              text: 'Login',
+                                              options: FFButtonOptions(
+                                                width: 100,
+                                                height: 23,
+                                                color: FlutterFlowTheme
+                                                    .customColor2,
+                                                textStyle: FlutterFlowTheme
+                                                    .subtitle2
+                                                    .override(
+                                                  fontFamily:
+                                                      'Open Sans Condensed',
+                                                  color: Colors.white,
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                ),
+                                                borderRadius: 0,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               )
                             ],

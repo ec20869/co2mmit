@@ -87,7 +87,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Padding(
                                       padding:
@@ -152,7 +152,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                         children: [
                                           Expanded(
                                             child: AutoSizeText(
-                                              'Turn off auto-play\\nClose tabs not in use to prevent videos playing in the background\\nAvoid using videos when you only need audio\\nReduce Ultra HD video to lower quality\\n',
+                                              'Turn off auto-play. \\nClose tabs not in use to prevent videos playing in the background\\nAvoid using videos when you only need audio\\nReduce Ultra HD video to lower quality\\n',
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
                                                 fontFamily:
@@ -186,7 +186,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Padding(
                                       padding:
@@ -285,7 +285,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Padding(
                                       padding:
@@ -401,7 +401,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Padding(
                                       padding:
@@ -500,7 +500,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Padding(
                                       padding:
@@ -599,7 +599,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Padding(
                                       padding:

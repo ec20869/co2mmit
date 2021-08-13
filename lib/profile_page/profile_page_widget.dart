@@ -6,6 +6,8 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/upload_media.dart';
 import '../register/register_widget.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -128,23 +130,18 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                           )
                         ],
                       ),
-                      Align(
-                        alignment: Alignment(0, 0),
-                        child: Padding(
-                          padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                          child: Container(
-                            width: 80,
-                            height: 80,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Image.asset(
-                              'assets/images/icons8-male-user-96.png',
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                        ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CachedNetworkImage(
+                            imageUrl:
+                                'https://i.picsum.photos/id/830/200/200.jpg?hmac=3ce7zNUn5yg_XKy7dHgIHta7t_0vghPQnAGUSGJuBZE',
+                            width: 120,
+                            height: 120,
+                            fit: BoxFit.cover,
+                          )
+                        ],
                       ),
                       Padding(
                         padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
@@ -188,7 +185,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                   }
                                 }
                               },
-                              child: Text(
+                              child: AutoSizeText(
                                 'Edit Image',
                                 style: GoogleFonts.getFont(
                                   'DM Sans',

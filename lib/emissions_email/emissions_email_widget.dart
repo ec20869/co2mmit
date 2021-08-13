@@ -44,6 +44,7 @@ class _EmissionsEmailWidgetState extends State<EmissionsEmailWidget> {
           style: FlutterFlowTheme.title2.override(
             fontFamily: 'Open Sans Condensed',
             color: FlutterFlowTheme.customColor5,
+            fontSize: 30,
           ),
         ),
         actions: [],
@@ -63,7 +64,7 @@ class _EmissionsEmailWidgetState extends State<EmissionsEmailWidget> {
                     padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                     child: Image.network(
                       'https://quickchart.io/chart/render/zm-f6ee1d00-4ba0-424f-ae40-7b4de8518393',
-                      width: MediaQuery.of(context).size.width * 0.9,
+                      width: 330,
                       height: 230,
                       fit: BoxFit.contain,
                     ),

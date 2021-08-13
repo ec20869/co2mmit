@@ -225,76 +225,81 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ),
                               ),
                               Expanded(
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Expanded(
-                                      child: Align(
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Expanded(
+                                        child: Align(
+                                          alignment: Alignment(0, 1),
+                                          child: InkWell(
+                                            onTap: () async {
+                                              await Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      RegisterWidget(),
+                                                ),
+                                              );
+                                            },
+                                            child: Text(
+                                              'Don\'t have an account yet?',
+                                              textAlign: TextAlign.start,
+                                              style: FlutterFlowTheme.subtitle2
+                                                  .override(
+                                                fontFamily:
+                                                    'Open Sans Condensed',
+                                                color: FlutterFlowTheme
+                                                    .customColor5,
+                                                fontSize: 18,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
                                         alignment: Alignment(0, 1),
-                                        child: InkWell(
-                                          onTap: () async {
-                                            await Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    RegisterWidget(),
-                                              ),
-                                            );
-                                          },
-                                          child: Text(
-                                            'Don\'t have an account yet?',
-                                            textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.subtitle2
-                                                .override(
-                                              fontFamily: 'Open Sans Condensed',
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsets.fromLTRB(0, 0, 20, 0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              await Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      RegisterWidget(),
+                                                ),
+                                              );
+                                            },
+                                            text: 'Register',
+                                            options: FFButtonOptions(
+                                              width: 100,
+                                              height: 23,
                                               color:
-                                                  FlutterFlowTheme.customColor5,
-                                              fontSize: 18,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: Alignment(0, 1),
-                                      child: Padding(
-                                        padding:
-                                            EdgeInsets.fromLTRB(0, 0, 20, 0),
-                                        child: FFButtonWidget(
-                                          onPressed: () async {
-                                            await Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    RegisterWidget(),
+                                                  FlutterFlowTheme.customColor2,
+                                              textStyle: FlutterFlowTheme
+                                                  .subtitle2
+                                                  .override(
+                                                fontFamily:
+                                                    'Open Sans Condensed',
+                                                color: Colors.white,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w500,
                                               ),
-                                            );
-                                          },
-                                          text: 'Register',
-                                          options: FFButtonOptions(
-                                            width: 100,
-                                            height: 23,
-                                            color:
-                                                FlutterFlowTheme.customColor2,
-                                            textStyle: FlutterFlowTheme
-                                                .subtitle2
-                                                .override(
-                                              fontFamily: 'Open Sans Condensed',
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w500,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                              ),
+                                              borderRadius: 0,
                                             ),
-                                            borderSide: BorderSide(
-                                              color: Colors.transparent,
-                                            ),
-                                            borderRadius: 0,
                                           ),
                                         ),
-                                      ),
-                                    )
-                                  ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               )
                             ],

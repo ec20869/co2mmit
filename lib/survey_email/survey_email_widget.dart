@@ -1,5 +1,4 @@
 import '../auth/auth_util.dart';
-import '../backend/api_requests/api_calls.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -19,7 +18,6 @@ class SurveyEmailWidget extends StatefulWidget {
 }
 
 class _SurveyEmailWidgetState extends State<SurveyEmailWidget> {
-  dynamic result;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -266,29 +264,6 @@ class _SurveyEmailWidgetState extends State<SurveyEmailWidget> {
                       ),
                       borderRadius: 5,
                     ),
-                  ),
-                ),
-                FFButtonWidget(
-                  onPressed: () async {
-                    result = await getResultsCall();
-
-                    setState(() {});
-                  },
-                  text: 'Calculate',
-                  options: FFButtonOptions(
-                    width: 320,
-                    height: 55,
-                    color: FlutterFlowTheme.customColor2,
-                    textStyle: FlutterFlowTheme.subtitle2.override(
-                      fontFamily: 'Open Sans Condensed',
-                      color: FlutterFlowTheme.customColor5,
-                      fontSize: 20,
-                    ),
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.customColor1,
-                      width: 1,
-                    ),
-                    borderRadius: 5,
                   ),
                 )
               ],

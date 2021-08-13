@@ -520,7 +520,7 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
                         );
                       },
                       child: Container(
-                        width: MediaQuery.of(context).size.width,
+                        width: 350,
                         height: 200,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.customColor4,
@@ -650,103 +650,111 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
                           ),
                         );
                       },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 200,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.customColor4,
-                          image: DecorationImage(
-                            fit: BoxFit.fitWidth,
-                            image: Image.network(
-                              'https://quickchart.io/chart/render/zm-8a5de44d-43fa-4a95-864f-5ed351774ac4',
-                            ).image,
-                          ),
+                      child: Material(
+                        color: Colors.transparent,
+                        elevation: 2,
+                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
-                          border: Border.all(
-                            color: FlutterFlowTheme.customColor4,
-                          ),
                         ),
-                        child: Padding(
-                          padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
-                          child: Container(
-                            width: 100,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.customColor5,
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(8),
-                                bottomRight: Radius.circular(8),
-                                topLeft: Radius.circular(0),
-                                topRight: Radius.circular(0),
-                              ),
+                        child: Container(
+                          width: 350,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.customColor4,
+                            image: DecorationImage(
+                              fit: BoxFit.fitWidth,
+                              image: Image.network(
+                                'https://quickchart.io/chart/render/zm-8a5de44d-43fa-4a95-864f-5ed351774ac4',
+                              ).image,
                             ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
-                                        child: Column(
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                              color: FlutterFlowTheme.customColor4,
+                              width: 5,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
+                            child: Container(
+                              width: 100,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.customColor5,
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(8),
+                                  bottomRight: Radius.circular(8),
+                                  topLeft: Radius.circular(0),
+                                  topRight: Radius.circular(0),
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Video Emissions',
+                                                style: FlutterFlowTheme.title2
+                                                    .override(
+                                                  fontFamily:
+                                                      'Open Sans Condensed',
+                                                  color: FlutterFlowTheme
+                                                      .tertiaryColor,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        Column(
                                           mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              'Video Emissions',
-                                              style: FlutterFlowTheme.title2
-                                                  .override(
-                                                fontFamily:
-                                                    'Open Sans Condensed',
+                                            FFButtonWidget(
+                                              onPressed: () async {
+                                                await Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        EmissionsVideoWidget(),
+                                                  ),
+                                                );
+                                              },
+                                              text: 'Learn more',
+                                              options: FFButtonOptions(
+                                                width: 120,
+                                                height: 40,
                                                 color: FlutterFlowTheme
-                                                    .tertiaryColor,
+                                                    .customColor6,
+                                                textStyle: GoogleFonts.getFont(
+                                                  'Open Sans Condensed',
+                                                  color: FlutterFlowTheme
+                                                      .tertiaryColor,
+                                                  fontSize: 16,
+                                                ),
+                                                elevation: 3,
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1,
+                                                ),
+                                                borderRadius: 8,
                                               ),
                                             )
                                           ],
-                                        ),
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          FFButtonWidget(
-                                            onPressed: () async {
-                                              await Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      EmissionsVideoWidget(),
-                                                ),
-                                              );
-                                            },
-                                            text: 'Learn more',
-                                            options: FFButtonOptions(
-                                              width: 120,
-                                              height: 40,
-                                              color:
-                                                  FlutterFlowTheme.customColor6,
-                                              textStyle: GoogleFonts.getFont(
-                                                'Open Sans Condensed',
-                                                color: FlutterFlowTheme
-                                                    .tertiaryColor,
-                                                fontSize: 16,
-                                              ),
-                                              elevation: 3,
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1,
-                                              ),
-                                              borderRadius: 8,
-                                            ),
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                )
-                              ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -764,109 +772,118 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
                           ),
                         );
                       },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 200,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.customColor4,
-                          image: DecorationImage(
-                            fit: BoxFit.fitWidth,
-                            image: Image.network(
-                              'https://quickchart.io/chart/render/zm-8a5de44d-43fa-4a95-864f-5ed351774ac4',
-                            ).image,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 3,
-                              color: Color(0x33000000),
-                              offset: Offset(0, 2),
-                            )
-                          ],
+                      child: Material(
+                        color: Colors.transparent,
+                        elevation: 2,
+                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
-                          border: Border.all(
-                            color: FlutterFlowTheme.customColor4,
-                          ),
                         ),
-                        child: Padding(
-                          padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
-                          child: Container(
-                            width: 100,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.customColor5,
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(8),
-                                bottomRight: Radius.circular(8),
-                                topLeft: Radius.circular(0),
-                                topRight: Radius.circular(0),
-                              ),
+                        child: Container(
+                          width: 350,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.customColor4,
+                            image: DecorationImage(
+                              fit: BoxFit.fitWidth,
+                              image: Image.network(
+                                'https://quickchart.io/chart/render/zm-8a5de44d-43fa-4a95-864f-5ed351774ac4',
+                              ).image,
                             ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
-                                        child: Column(
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 3,
+                                color: Color(0x33000000),
+                                offset: Offset(0, 2),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                              color: FlutterFlowTheme.customColor4,
+                              width: 5,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
+                            child: Container(
+                              width: 100,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.customColor5,
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(8),
+                                  bottomRight: Radius.circular(8),
+                                  topLeft: Radius.circular(0),
+                                  topRight: Radius.circular(0),
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Gaming Emissions',
+                                                style: FlutterFlowTheme.title2
+                                                    .override(
+                                                  fontFamily:
+                                                      'Open Sans Condensed',
+                                                  color: FlutterFlowTheme
+                                                      .tertiaryColor,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        Column(
                                           mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              'Gaming Emissions',
-                                              style: FlutterFlowTheme.title2
-                                                  .override(
-                                                fontFamily:
-                                                    'Open Sans Condensed',
+                                            FFButtonWidget(
+                                              onPressed: () async {
+                                                await Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        EmissionsGamingWidget(),
+                                                  ),
+                                                );
+                                              },
+                                              text: 'Learn more',
+                                              options: FFButtonOptions(
+                                                width: 120,
+                                                height: 40,
                                                 color: FlutterFlowTheme
-                                                    .tertiaryColor,
+                                                    .customColor6,
+                                                textStyle: GoogleFonts.getFont(
+                                                  'Open Sans Condensed',
+                                                  color: FlutterFlowTheme
+                                                      .tertiaryColor,
+                                                  fontSize: 16,
+                                                ),
+                                                elevation: 3,
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1,
+                                                ),
+                                                borderRadius: 8,
                                               ),
                                             )
                                           ],
-                                        ),
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          FFButtonWidget(
-                                            onPressed: () async {
-                                              await Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      EmissionsGamingWidget(),
-                                                ),
-                                              );
-                                            },
-                                            text: 'Learn more',
-                                            options: FFButtonOptions(
-                                              width: 120,
-                                              height: 40,
-                                              color: Color(0xFF39D2C0),
-                                              textStyle: GoogleFonts.getFont(
-                                                'Open Sans Condensed',
-                                                color: FlutterFlowTheme
-                                                    .tertiaryColor,
-                                                fontSize: 16,
-                                              ),
-                                              elevation: 3,
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1,
-                                              ),
-                                              borderRadius: 8,
-                                            ),
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                )
-                              ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -884,109 +901,117 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
                           ),
                         );
                       },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 200,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.customColor4,
-                          image: DecorationImage(
-                            fit: BoxFit.fitWidth,
-                            image: Image.network(
-                              'https://quickchart.io/chart/render/zm-8a5de44d-43fa-4a95-864f-5ed351774ac4',
-                            ).image,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 3,
-                              color: Color(0x33000000),
-                              offset: Offset(0, 2),
-                            )
-                          ],
+                      child: Material(
+                        color: Colors.transparent,
+                        elevation: 2,
+                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
-                          border: Border.all(
-                            color: FlutterFlowTheme.customColor4,
-                          ),
                         ),
-                        child: Padding(
-                          padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
-                          child: Container(
-                            width: 100,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.customColor5,
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(8),
-                                bottomRight: Radius.circular(8),
-                                topLeft: Radius.circular(0),
-                                topRight: Radius.circular(0),
-                              ),
+                        child: Container(
+                          width: 350,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.customColor4,
+                            image: DecorationImage(
+                              fit: BoxFit.fitWidth,
+                              image: Image.network(
+                                'https://quickchart.io/chart/render/zm-8a5de44d-43fa-4a95-864f-5ed351774ac4',
+                              ).image,
                             ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
-                                        child: Column(
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 3,
+                                color: Color(0x33000000),
+                                offset: Offset(0, 2),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                              color: FlutterFlowTheme.customColor4,
+                              width: 5,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
+                            child: Container(
+                              width: 100,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.customColor5,
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(8),
+                                  bottomRight: Radius.circular(8),
+                                  topLeft: Radius.circular(0),
+                                  topRight: Radius.circular(0),
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Internet Emissions',
+                                                style: FlutterFlowTheme.title2
+                                                    .override(
+                                                  fontFamily:
+                                                      'Open Sans Condensed',
+                                                  color: FlutterFlowTheme
+                                                      .tertiaryColor,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        Column(
                                           mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              'Internet Emissions',
-                                              style: FlutterFlowTheme.title2
-                                                  .override(
-                                                fontFamily:
-                                                    'Open Sans Condensed',
-                                                color: FlutterFlowTheme
-                                                    .tertiaryColor,
+                                            FFButtonWidget(
+                                              onPressed: () async {
+                                                await Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        EmissionsInternetWidget(),
+                                                  ),
+                                                );
+                                              },
+                                              text: 'Learn more',
+                                              options: FFButtonOptions(
+                                                width: 120,
+                                                height: 40,
+                                                color: Color(0xFF39D2C0),
+                                                textStyle: GoogleFonts.getFont(
+                                                  'Open Sans Condensed',
+                                                  color: FlutterFlowTheme
+                                                      .tertiaryColor,
+                                                  fontSize: 16,
+                                                ),
+                                                elevation: 3,
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1,
+                                                ),
+                                                borderRadius: 8,
                                               ),
                                             )
                                           ],
-                                        ),
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          FFButtonWidget(
-                                            onPressed: () async {
-                                              await Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      EmissionsInternetWidget(),
-                                                ),
-                                              );
-                                            },
-                                            text: 'Learn more',
-                                            options: FFButtonOptions(
-                                              width: 120,
-                                              height: 40,
-                                              color: Color(0xFF39D2C0),
-                                              textStyle: GoogleFonts.getFont(
-                                                'Open Sans Condensed',
-                                                color: FlutterFlowTheme
-                                                    .tertiaryColor,
-                                                fontSize: 16,
-                                              ),
-                                              elevation: 3,
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1,
-                                              ),
-                                              borderRadius: 8,
-                                            ),
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                )
-                              ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -1004,109 +1029,117 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
                           ),
                         );
                       },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 200,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.customColor4,
-                          image: DecorationImage(
-                            fit: BoxFit.fitWidth,
-                            image: Image.network(
-                              'https://quickchart.io/chart/render/zm-8a5de44d-43fa-4a95-864f-5ed351774ac4',
-                            ).image,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 3,
-                              color: Color(0x33000000),
-                              offset: Offset(0, 2),
-                            )
-                          ],
+                      child: Material(
+                        color: Colors.transparent,
+                        elevation: 2,
+                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
-                          border: Border.all(
-                            color: FlutterFlowTheme.customColor4,
-                          ),
                         ),
-                        child: Padding(
-                          padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
-                          child: Container(
-                            width: 100,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.customColor5,
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(8),
-                                bottomRight: Radius.circular(8),
-                                topLeft: Radius.circular(0),
-                                topRight: Radius.circular(0),
-                              ),
+                        child: Container(
+                          width: 350,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.customColor4,
+                            image: DecorationImage(
+                              fit: BoxFit.fitWidth,
+                              image: Image.network(
+                                'https://quickchart.io/chart/render/zm-8a5de44d-43fa-4a95-864f-5ed351774ac4',
+                              ).image,
                             ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
-                                        child: Column(
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 3,
+                                color: Color(0x33000000),
+                                offset: Offset(0, 2),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                              color: FlutterFlowTheme.customColor4,
+                              width: 5,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
+                            child: Container(
+                              width: 100,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.customColor5,
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(8),
+                                  bottomRight: Radius.circular(8),
+                                  topLeft: Radius.circular(0),
+                                  topRight: Radius.circular(0),
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Email Emissions',
+                                                style: FlutterFlowTheme.title2
+                                                    .override(
+                                                  fontFamily:
+                                                      'Open Sans Condensed',
+                                                  color: FlutterFlowTheme
+                                                      .tertiaryColor,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        Column(
                                           mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              'Email Emissions',
-                                              style: FlutterFlowTheme.title2
-                                                  .override(
-                                                fontFamily:
-                                                    'Open Sans Condensed',
-                                                color: FlutterFlowTheme
-                                                    .tertiaryColor,
+                                            FFButtonWidget(
+                                              onPressed: () async {
+                                                await Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        EmissionsEmailWidget(),
+                                                  ),
+                                                );
+                                              },
+                                              text: 'Learn more',
+                                              options: FFButtonOptions(
+                                                width: 120,
+                                                height: 40,
+                                                color: Color(0xFF39D2C0),
+                                                textStyle: GoogleFonts.getFont(
+                                                  'Open Sans Condensed',
+                                                  color: FlutterFlowTheme
+                                                      .tertiaryColor,
+                                                  fontSize: 16,
+                                                ),
+                                                elevation: 3,
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1,
+                                                ),
+                                                borderRadius: 8,
                                               ),
                                             )
                                           ],
-                                        ),
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          FFButtonWidget(
-                                            onPressed: () async {
-                                              await Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      EmissionsEmailWidget(),
-                                                ),
-                                              );
-                                            },
-                                            text: 'Learn more',
-                                            options: FFButtonOptions(
-                                              width: 120,
-                                              height: 40,
-                                              color: Color(0xFF39D2C0),
-                                              textStyle: GoogleFonts.getFont(
-                                                'Open Sans Condensed',
-                                                color: FlutterFlowTheme
-                                                    .tertiaryColor,
-                                                fontSize: 16,
-                                              ),
-                                              elevation: 3,
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1,
-                                              ),
-                                              borderRadius: 8,
-                                            ),
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                )
-                              ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),

@@ -76,7 +76,7 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(60, 20, 60, 40),
                     child: AutoSizeText(
-                      'To get started...please complete a few questions on your digital habits so we can measure your estimated digital carbon footprint',
+                      'To get started...we have a few questions on your digital habits that will help us measure your estimated digital carbon footprint',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.bodyText1.override(
                         fontFamily: 'Open Sans Condensed',

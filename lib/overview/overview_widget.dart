@@ -2,7 +2,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
-import '../survey_multi_page/survey_multi_page_widget.dart';
+import '../survey_welcome/survey_welcome_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -74,7 +74,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     AutoSizeText(
-                      '[ ]t CO2e',
+                      '[result]t CO2e',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.bodyText1.override(
                         fontFamily: 'Open Sans Condensed',
@@ -199,18 +199,20 @@ class _OverviewWidgetState extends State<OverviewWidget> {
             Row(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Align(
-                  alignment: Alignment(0, 0),
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(60, 0, 50, 5),
-                    child: AutoSizeText(
-                      '* Average carbon footprint overall (inclusive all emissions categories)',
-                      textAlign: TextAlign.justify,
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Open Sans Condensed',
-                        color: FlutterFlowTheme.customColor5,
-                        fontSize: 12,
-                        fontStyle: FontStyle.italic,
+                Expanded(
+                  child: Align(
+                    alignment: Alignment(0, 0),
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(60, 0, 50, 5),
+                      child: AutoSizeText(
+                        '* Average carbon footprint overall (inclusive all emissions categories)',
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.bodyText1.override(
+                          fontFamily: 'Open Sans Condensed',
+                          color: FlutterFlowTheme.customColor5,
+                          fontSize: 12,
+                          fontStyle: FontStyle.italic,
+                        ),
                       ),
                     ),
                   ),
@@ -251,7 +253,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                 await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SurveyMultiPageWidget(),
+                    builder: (context) => SurveyWelcomeWidget(),
                   ),
                 );
               },
