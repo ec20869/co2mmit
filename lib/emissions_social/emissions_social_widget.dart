@@ -2,6 +2,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -43,6 +44,8 @@ class _EmissionsSocialWidgetState extends State<EmissionsSocialWidget> {
           style: FlutterFlowTheme.title2.override(
             fontFamily: 'Open Sans Condensed',
             color: FlutterFlowTheme.customColor5,
+            fontSize: 30,
+            fontWeight: FontWeight.w500,
           ),
         ),
         actions: [],
@@ -74,7 +77,7 @@ class _EmissionsSocialWidgetState extends State<EmissionsSocialWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
-                    child: Text(
+                    child: AutoSizeText(
                       'Social Emissions',
                       style: FlutterFlowTheme.title2.override(
                         fontFamily: 'Open Sans Condensed',
@@ -91,7 +94,7 @@ class _EmissionsSocialWidgetState extends State<EmissionsSocialWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
-                    child: Text(
+                    child: AutoSizeText(
                       'Instagram, Facebook, TikTok, Twitter, WhatsApp, Messenger, etc.',
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.subtitle2.override(
@@ -109,8 +112,8 @@ class _EmissionsSocialWidgetState extends State<EmissionsSocialWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
-                    child: Text(
-                      'The most energy-intensive activity on social channels is scrolling on a news feed (1.549 gCO2e). One minute of scrolling on a newsfeed is roughly the equivalent of driving 13 metres in a light vehicle. Composed of photos, videos, and advertisements, the functionality does not consume the most energy, but in terms of the data exchanged, it is the one that displays the highest value (14.63 MB for one minute). The feature that has the least impact on the environment over one minute is the photo publication (0.154 gEqCO2).\\n\\nIn terms of carbon emissions from each social media app in 2020, Youtube (0.66 gEqCO2) was first in the ranking, closely followed by Facebook (0.73 gEqCO2) and LinkedIn (0.75 gEqCO2). The social network with the most impactful news feed was Tik Tok since this social network is based exclusively on watching videos and preloads videos from the newsfeed. The four apps Tik Tok, Reddit, Pinterest and Snapchat were above the average carbon impact (2.1 gEqCO2) observed. In fact, the Tik Tok news feed has a carbon impact about 7.7 times greater than that of Youtube.\\n',
+                    child: AutoSizeText(
+                      'Have you ever wondered what the environmental cost of a post, a story, watching a live or Instagram feed is?\\n\\nThe most energy-intensive activity on social channels is scrolling on a news feed (1.549g CO2e). One minute of scrolling is roughly the equivalent of driving 13 metres in a vehicle. \\n\\nPhotos, videos, and ads consume the most energy in terms of data exchanged (14.63 MB for one minute). One minute of uploading photos is estimated at 0.154g CO2e.\\n\\nIn 2020, Youtube (0.66g CO2e) ranked highest channel for emissions, closely followed by Facebook (0.73g CO2e) and LinkedIn (0.75g CO2e). The four apps TikTok, Reddit, Pinterest and Snapchat were above the average carbon impact (2.1g CO2e) observed. In fact, the TikTok news feed has a carbon impact about 7.7 times greater than that of Youtube.\\n',
                       style: FlutterFlowTheme.bodyText2.override(
                         fontFamily: 'Open Sans Condensed',
                         color: FlutterFlowTheme.tertiaryColor,

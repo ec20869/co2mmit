@@ -1,7 +1,11 @@
+import '../auth/auth_util.dart';
+import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../survey_multi_page/survey_multi_page_widget.dart';
+import '../survey_social/survey_social_widget.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -50,14 +54,14 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
-                    child: Text(
-                      'Welcome to Co2mmit, \\nyour new digital carbon footprint calculator',
+                    padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                    child: AutoSizeText(
+                      'Welcome to CO2MMIT, your personal digital carbon footprint calculator',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.title1.override(
                         fontFamily: 'Open Sans Condensed',
                         color: FlutterFlowTheme.customColor4,
-                        fontSize: 33,
+                        fontSize: 35,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -71,8 +75,8 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
                 Expanded(
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(60, 20, 60, 40),
-                    child: Text(
-                      'To get started please complete a short questionnaire so we can measure your current digital carbon footprint',
+                    child: AutoSizeText(
+                      'To get started...please complete a few questions on your digital habits so we can measure your estimated digital carbon footprint',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.bodyText1.override(
                         fontFamily: 'Open Sans Condensed',
@@ -87,10 +91,19 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
             ),
             FFButtonWidget(
               onPressed: () async {
+                final surveyCreateData = createSurveyRecordData(
+                  social: '0',
+                  video: '0',
+                  audio: '0',
+                  email: '0',
+                  gaming: '0',
+                  internet: '0',
+                );
+                await SurveyRecord.collection.doc().set(surveyCreateData);
                 await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SurveyMultiPageWidget(),
+                    builder: (context) => SurveySocialWidget(),
                   ),
                 );
               },

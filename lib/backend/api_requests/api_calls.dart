@@ -1,16 +1,20 @@
 import 'api_manager.dart';
 
 Future<dynamic> getResultsCall({
-  int results,
+  String social = '0',
+  String video = '0',
+  String gaming = '0',
+  String audio = '0',
+  String email = '0',
+  String internet = '0',
 }) =>
     ApiManager.instance.makeApiCall(
       callName: 'get results',
       apiDomain: 'api.mathjs.org',
-      apiEndpoint: 'v4/?expr=100',
+      apiEndpoint:
+          'v4/?expr=$social%2B$video%2B$gaming%2B$audio%2B$email%2B$internet%2B',
       callType: ApiCallType.GET,
       headers: {},
-      params: {
-        'results': results,
-      },
+      params: {},
       returnResponse: true,
     );

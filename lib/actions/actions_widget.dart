@@ -1,5 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,6 +28,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
             fontFamily: 'Open Sans Condensed',
             color: FlutterFlowTheme.customColor5,
             fontSize: 30,
+            fontWeight: FontWeight.w500,
           ),
         ),
         actions: [
@@ -96,7 +98,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Video Emissions',
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
@@ -128,7 +130,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Watch Your Video Streaming',
                                               style: FlutterFlowTheme.subtitle1
                                                   .override(
@@ -149,7 +151,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Turn off auto-play\\nClose tabs not in use to prevent videos playing in the background\\nAvoid using videos when you only need audio\\nReduce Ultra HD video to lower quality\\n',
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
@@ -195,7 +197,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Email Emissions',
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
@@ -227,7 +229,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Change Your Email Habits',
                                               style: FlutterFlowTheme.subtitle1
                                                   .override(
@@ -248,7 +250,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Power down your computer if away for more than 2hrs\\nReduce number of emails sent per day\\nClean out your inbox regularly\\nUnsubscribe from emails\\n',
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
@@ -326,7 +328,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Choose a Conscious Cloud',
                                               style: FlutterFlowTheme.subtitle1
                                                   .override(
@@ -410,7 +412,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Internet Emissions',
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
@@ -442,7 +444,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Kill the Vampire Power',
                                               style: FlutterFlowTheme.subtitle1
                                                   .override(
@@ -463,7 +465,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Shut down your devices overnight \\nSet your devices to sleep mode after a set time when inactive\\nDim your devices to conserve energy use\\nHold onto devices for as long as possible and avoid upgrades\\n',
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
@@ -541,7 +543,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Make Your Playground Eco',
                                               style: FlutterFlowTheme.subtitle1
                                                   .override(
@@ -562,7 +564,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Switch to a greener gaming console\\nUse games that have eco-conscious design\\nTurn off equipment when not in use\\nReduce weekly play time\\n',
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
@@ -608,7 +610,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Audio Emissions',
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
@@ -640,7 +642,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Listen to Your Conscious',
                                               style: FlutterFlowTheme.subtitle1
                                                   .override(
@@ -661,7 +663,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Download music or podcast instead of streaming\\nBuy the physical copies (vinyl, cassettes) instead of online\\nChange your autoplay settings\\nAvoid using videos when you only need audio\\n',
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(

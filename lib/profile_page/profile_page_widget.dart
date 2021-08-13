@@ -53,8 +53,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
           style: FlutterFlowTheme.subtitle1.override(
             fontFamily: 'Open Sans Condensed',
             color: FlutterFlowTheme.customColor5,
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
+            fontSize: 30,
+            fontWeight: FontWeight.w500,
           ),
         ),
         actions: [

@@ -2,6 +2,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -50,105 +51,108 @@ class _EmissionsEmailWidgetState extends State<EmissionsEmailWidget> {
         elevation: 0,
       ),
       backgroundColor: FlutterFlowTheme.customColor2,
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                  child: Image.network(
-                    'https://quickchart.io/chart/render/zm-f6ee1d00-4ba0-424f-ae40-7b4de8518393',
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    height: 230,
-                    fit: BoxFit.contain,
-                  ),
-                )
-              ],
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20, 12, 20, 0),
-              child: Row(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Expanded(
-                    child: Text(
-                      'Email Emissions',
-                      style: FlutterFlowTheme.title2.override(
-                        fontFamily: 'Open Sans Condensed',
-                        color: FlutterFlowTheme.customColor4,
-                      ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    child: Image.network(
+                      'https://quickchart.io/chart/render/zm-f6ee1d00-4ba0-424f-ae40-7b4de8518393',
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      height: 230,
+                      fit: BoxFit.contain,
                     ),
                   )
                 ],
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20, 4, 20, 0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: Text(
-                      'Microsoft Outlook, Gmail, Yahoo, etc.',
-                      textAlign: TextAlign.start,
-                      style: FlutterFlowTheme.subtitle2.override(
-                        fontFamily: 'Open Sans Condensed',
-                        color: FlutterFlowTheme.customColor5,
+              Padding(
+                padding: EdgeInsets.fromLTRB(20, 12, 20, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: AutoSizeText(
+                        'Email Emissions',
+                        style: FlutterFlowTheme.title2.override(
+                          fontFamily: 'Open Sans Condensed',
+                          color: FlutterFlowTheme.customColor4,
+                        ),
                       ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20, 12, 20, 0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: Text(
-                      'Each email you send racks up an average of 1g of carbon emissions. That’s about the same weight as a teaspoon of sugar, or a paperclip.\\n\\nIt doesn’t sound like much – until you think about how many emails you actually send and receive. According to research, we send an average of 64 unnecessary emails per day. The footprint of an email also varies dramatically, from 0.3g CO2e for a spam email to 4g (0.14oz) CO2e for a regular email and 50g (1.7oz) CO2e for one with a photo or hefty attachment.\\n\\nBased on the previous study figures, some estimates report that individuals with their own emails will generate 1.6kg (3.5lb) CO2e in a single day. \\n',
-                      style: FlutterFlowTheme.bodyText2.override(
-                        fontFamily: 'Open Sans Condensed',
-                        color: FlutterFlowTheme.tertiaryColor,
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
-              child: FFButtonWidget(
-                onPressed: () async {
-                  await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => NavBarPage(initialPage: 'Actions'),
-                    ),
-                  );
-                },
-                text: 'Discover ways to reduce your footprint',
-                options: FFButtonOptions(
-                  width: 300,
-                  height: 60,
-                  color: FlutterFlowTheme.customColor5,
-                  textStyle: FlutterFlowTheme.title3.override(
-                    fontFamily: 'Open Sans Condensed',
-                    color: FlutterFlowTheme.tertiaryColor,
-                  ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: 12,
+                    )
+                  ],
                 ),
               ),
-            )
-          ],
+              Padding(
+                padding: EdgeInsets.fromLTRB(20, 4, 20, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: AutoSizeText(
+                        'Microsoft Outlook, Gmail, Yahoo, etc.',
+                        textAlign: TextAlign.start,
+                        style: FlutterFlowTheme.subtitle2.override(
+                          fontFamily: 'Open Sans Condensed',
+                          color: FlutterFlowTheme.customColor5,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(20, 12, 20, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: AutoSizeText(
+                        'Each email you send is estimated to rack up an average of 1g of CO2e. That’s about the same weight as a teaspoon of sugar, or a paperclip.\\n\\nIt doesn’t sound like much – until you think about how many emails you actually send and receive. According to research, we send an average of 64 unnecessary emails per day. \\n\\nThe footprint of an email also varies dramatically, from 0.3g CO2e for a spam email to 4g CO2e for a regular email and 50g CO2e for one with a photo or hefty attachment.\\n\\nBased on the previous study figures, some estimates report that individuals with their own emails will generate 1.6kg CO2e in a single day. \\n',
+                        style: FlutterFlowTheme.bodyText2.override(
+                          fontFamily: 'Open Sans Condensed',
+                          color: FlutterFlowTheme.tertiaryColor,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
+                child: FFButtonWidget(
+                  onPressed: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            NavBarPage(initialPage: 'Actions'),
+                      ),
+                    );
+                  },
+                  text: 'Discover ways to reduce your footprint',
+                  options: FFButtonOptions(
+                    width: 300,
+                    height: 60,
+                    color: FlutterFlowTheme.customColor5,
+                    textStyle: FlutterFlowTheme.title3.override(
+                      fontFamily: 'Open Sans Condensed',
+                      color: FlutterFlowTheme.tertiaryColor,
+                    ),
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                      width: 1,
+                    ),
+                    borderRadius: 12,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

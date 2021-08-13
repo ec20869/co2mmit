@@ -7,6 +7,7 @@ import '../emissions_video/emissions_video_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -42,6 +43,7 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
             fontFamily: 'Open Sans Condensed',
             color: FlutterFlowTheme.customColor5,
             fontSize: 30,
+            fontWeight: FontWeight.w500,
           ),
         ),
         actions: [],
@@ -524,9 +526,9 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
                           color: FlutterFlowTheme.customColor4,
                           image: DecorationImage(
                             fit: BoxFit.scaleDown,
-                            image: Image.network(
+                            image: CachedNetworkImageProvider(
                               'https://quickchart.io/chart/render/zm-a2598779-d096-4cab-adc8-7039f99239a6',
-                            ).image,
+                            ),
                           ),
                           boxShadow: [
                             BoxShadow(

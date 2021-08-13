@@ -2,6 +2,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -43,6 +44,7 @@ class _EmissionsGamingWidgetState extends State<EmissionsGamingWidget> {
           style: FlutterFlowTheme.title2.override(
             fontFamily: 'Open Sans Condensed',
             color: FlutterFlowTheme.customColor5,
+            fontSize: 30,
           ),
         ),
         actions: [],
@@ -74,7 +76,7 @@ class _EmissionsGamingWidgetState extends State<EmissionsGamingWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
-                    child: Text(
+                    child: AutoSizeText(
                       'Gaming Emissions',
                       style: FlutterFlowTheme.title2.override(
                         fontFamily: 'Open Sans Condensed',
@@ -91,7 +93,7 @@ class _EmissionsGamingWidgetState extends State<EmissionsGamingWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
-                    child: Text(
+                    child: AutoSizeText(
                       'Xbox, Playstation, GeForce Now, Vortex,  etc.',
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.subtitle2.override(
@@ -109,8 +111,8 @@ class _EmissionsGamingWidgetState extends State<EmissionsGamingWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
-                    child: Text(
-                      'The average gamer will use between five and 375 kWh per year on their gaming habit, depending on their console of choice. (The Playstation 4 and Xbox One generate similar energy demands, while the Nintendo Switch requires considerably less.) These figures will vary, obviously, depending on usage and electrical costs in a person\'s region. Heavy gamers will generate considerably more — 1,100 kWh per year or more. That is well over the average electrical cost for other household appliances. An energy-efficient washing machine will account for about 318 kWh each year, \\n\\nPlayStation reveals the results of an academic study showing that on average, PlayStation 4 downloads result in carbon emissions of 0.047kg of CO2 emitted per hour, with disc gaming resulting in 0.055kg of CO2 emitted per hour. This is half of the amount of emissions on average for a typical PC game, the report said, and around 50 times less than a trip to the movies -- mainly due to the travel required. Cloud game streaming emits an estimated 0.149kg of CO2 per hour -- however, this can vary considerably depending on how long the game is played.\\n',
+                    child: AutoSizeText(
+                      'PlayStation reveals that on average PlayStation 4 downloads result in 0.047kg of CO2e emitted per hour, with disc gaming resulting in 0.055kg of CO2e emitted per hour. This is half of the amount of emissions for a typical PC game.\\n\\nCloud game streaming emits an estimated 0.149kg of CO2e per hour but varies depending on how long the game is played.\\n\\nThe average gamer will use up to 375 kWh per year on their gaming habit, depending on their console of choice. These figures vary depending on usage and region. Heavy gamers will generate considerably more — 1,100 kWh per year or more. That is well over the average electrical cost for other household appliances. An energy-efficient washing machine will account for about 318 kWh each year.\\n',
                       style: FlutterFlowTheme.bodyText2.override(
                         fontFamily: 'Open Sans Condensed',
                         color: FlutterFlowTheme.tertiaryColor,
