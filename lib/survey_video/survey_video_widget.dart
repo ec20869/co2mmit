@@ -1,17 +1,20 @@
-import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../survey_gaming/survey_gaming_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SurveyVideoWidget extends StatefulWidget {
-  SurveyVideoWidget({Key key}) : super(key: key);
+  SurveyVideoWidget({
+    Key key,
+    this.expr,
+  }) : super(key: key);
+
+  final String expr;
 
   @override
   _SurveyVideoWidgetState createState() => _SurveyVideoWidgetState();
@@ -131,15 +134,12 @@ class _SurveyVideoWidgetState extends State<SurveyVideoWidget> {
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final surveyUpdateData = createSurveyRecordData(
-                        video: '0',
-                      );
-                      await surveyVideoSurveyRecord.reference
-                          .update(surveyUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SurveyGamingWidget(),
+                          builder: (context) => SurveyGamingWidget(
+                            expr: '0%2B${widget.expr}',
+                          ),
                         ),
                       );
                     },
@@ -166,15 +166,12 @@ class _SurveyVideoWidgetState extends State<SurveyVideoWidget> {
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final surveyUpdateData = createSurveyRecordData(
-                        video: '0.131',
-                      );
-                      await surveyVideoSurveyRecord.reference
-                          .update(surveyUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SurveyGamingWidget(),
+                          builder: (context) => SurveyGamingWidget(
+                            expr: '0.131%2B${widget.expr}',
+                          ),
                         ),
                       );
                     },
@@ -201,15 +198,12 @@ class _SurveyVideoWidgetState extends State<SurveyVideoWidget> {
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final surveyUpdateData = createSurveyRecordData(
-                        video: '0.263',
-                      );
-                      await surveyVideoSurveyRecord.reference
-                          .update(surveyUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SurveyGamingWidget(),
+                          builder: (context) => SurveyGamingWidget(
+                            expr: '0.263%2B${widget.expr}',
+                          ),
                         ),
                       );
                     },
@@ -234,15 +228,12 @@ class _SurveyVideoWidgetState extends State<SurveyVideoWidget> {
                 ),
                 FFButtonWidget(
                   onPressed: () async {
-                    final surveyUpdateData = createSurveyRecordData(
-                      video: '0.394',
-                    );
-                    await surveyVideoSurveyRecord.reference
-                        .update(surveyUpdateData);
                     await Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SurveyGamingWidget(),
+                        builder: (context) => SurveyGamingWidget(
+                          expr: '0.394%2B${widget.expr}',
+                        ),
                       ),
                     );
                   },

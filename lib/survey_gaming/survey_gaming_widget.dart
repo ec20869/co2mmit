@@ -1,18 +1,21 @@
-import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../survey_internet/survey_internet_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SurveyGamingWidget extends StatefulWidget {
-  SurveyGamingWidget({Key key}) : super(key: key);
+  SurveyGamingWidget({
+    Key key,
+    this.expr,
+  }) : super(key: key);
+
+  final String expr;
 
   @override
   _SurveyGamingWidgetState createState() => _SurveyGamingWidgetState();
@@ -132,15 +135,12 @@ class _SurveyGamingWidgetState extends State<SurveyGamingWidget> {
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final surveyUpdateData = createSurveyRecordData(
-                        gaming: '0',
-                      );
-                      await surveyGamingSurveyRecord.reference
-                          .update(surveyUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SurveyInternetWidget(),
+                          builder: (context) => SurveyInternetWidget(
+                            expr: '0%2B${widget.expr}',
+                          ),
                         ),
                       );
                     },
@@ -167,15 +167,12 @@ class _SurveyGamingWidgetState extends State<SurveyGamingWidget> {
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final surveyUpdateData = createSurveyRecordData(
-                        gaming: '0.164',
-                      );
-                      await surveyGamingSurveyRecord.reference
-                          .update(surveyUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SurveyInternetWidget(),
+                          builder: (context) => SurveyInternetWidget(
+                            expr: '0.164%2B${widget.expr}',
+                          ),
                         ),
                       );
                     },
@@ -202,15 +199,12 @@ class _SurveyGamingWidgetState extends State<SurveyGamingWidget> {
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final surveyUpdateData = createSurveyRecordData(
-                        gaming: '0.329',
-                      );
-                      await surveyGamingSurveyRecord.reference
-                          .update(surveyUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SurveyInternetWidget(),
+                          builder: (context) => SurveyInternetWidget(
+                            expr: '0.239%2B${widget.expr}',
+                          ),
                         ),
                       );
                     },
@@ -235,15 +229,12 @@ class _SurveyGamingWidgetState extends State<SurveyGamingWidget> {
                 ),
                 FFButtonWidget(
                   onPressed: () async {
-                    final surveyUpdateData = createSurveyRecordData(
-                      gaming: '0.492',
-                    );
-                    await surveyGamingSurveyRecord.reference
-                        .update(surveyUpdateData);
                     await Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SurveyInternetWidget(),
+                        builder: (context) => SurveyInternetWidget(
+                          expr: '0.492%2B${widget.expr}',
+                        ),
                       ),
                     );
                   },

@@ -1,9 +1,13 @@
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_widgets.dart';
+import '../survey_welcome/survey_welcome_widget.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SplashscreenWidget extends StatefulWidget {
   SplashscreenWidget({Key key}) : super(key: key);
@@ -60,32 +64,81 @@ class _SplashscreenWidgetState extends State<SplashscreenWidget>
                   color: FlutterFlowTheme.customColor2,
                   shape: BoxShape.rectangle,
                 ),
-                child: Align(
-                  alignment: Alignment(0, -0.94),
-                  child: Image.asset(
-                    'assets/images/Logo@3x.png',
-                    width: 2700,
-                    height: 150,
-                    fit: BoxFit.fitWidth,
-                  ).animated([animationsMap['imageOnPageLoadAnimation']]),
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment(0, 0.85),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'DIGITAL CARBON FOOTPRINT TRACKER',
-                    textAlign: TextAlign.center,
-                    style: FlutterFlowTheme.title2.override(
-                      fontFamily: 'Open Sans Condensed',
-                      color: FlutterFlowTheme.customColor6,
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Align(
+                      alignment: Alignment(0, -0.94),
+                      child: Image.asset(
+                        'assets/images/Logo@3x.png',
+                        width: 2700,
+                        height: 150,
+                        fit: BoxFit.fitWidth,
+                      ).animated([animationsMap['imageOnPageLoadAnimation']]),
                     ),
-                  )
-                ],
+                    Align(
+                      alignment: Alignment(0, 0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Align(
+                            alignment: Alignment(0, 0),
+                            child: AutoSizeText(
+                              'DIGITAL CARBON FOOTPRINT TRACKER',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.title2.override(
+                                fontFamily: 'Open Sans Condensed',
+                                color: FlutterFlowTheme.customColor6,
+                                fontSize: 19,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment(0, 0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 300, 0, 0),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SurveyWelcomeWidget(),
+                                  ),
+                                );
+                              },
+                              text: 'ENTER',
+                              options: FFButtonOptions(
+                                width: 300,
+                                height: 50,
+                                color: FlutterFlowTheme.customColor2,
+                                textStyle: FlutterFlowTheme.subtitle2.override(
+                                  fontFamily: 'Open Sans Condensed',
+                                  color: FlutterFlowTheme.customColor5,
+                                  fontSize: 18,
+                                ),
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.customColor4,
+                                  width: 1,
+                                ),
+                                borderRadius: 12,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ],

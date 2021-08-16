@@ -4,6 +4,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../login/login_widget.dart';
 import '../survey_welcome/survey_welcome_widget.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -61,6 +62,27 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ).image,
                         ),
                         shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment(0, 0.85),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Align(
+                              alignment: Alignment(0, 0.45),
+                              child: AutoSizeText(
+                                'DIGITAL CARBON FOOTPRINT TRACKER',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.title2.override(
+                                  fontFamily: 'Open Sans Condensed',
+                                  color: FlutterFlowTheme.customColor6,
+                                  fontSize: 19,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   )

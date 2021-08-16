@@ -1,8 +1,10 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../main.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class MeasureEmissionsWidget extends StatefulWidget {
   MeasureEmissionsWidget({Key key}) : super(key: key);
@@ -18,6 +20,36 @@ class _MeasureEmissionsWidgetState extends State<MeasureEmissionsWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.customColor2,
+        automaticallyImplyLeading: false,
+        leading: InkWell(
+          onTap: () async {
+            await Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => NavBarPage(initialPage: 'MyCo2'),
+              ),
+            );
+          },
+          child: Icon(
+            Icons.chevron_left_rounded,
+            color: FlutterFlowTheme.customColor5,
+            size: 32,
+          ),
+        ),
+        title: Text(
+          'Overview',
+          style: FlutterFlowTheme.title2.override(
+            fontFamily: 'Open Sans Condensed',
+            color: FlutterFlowTheme.customColor5,
+            fontSize: 30,
+          ),
+        ),
+        actions: [],
+        centerTitle: false,
+        elevation: 0,
+      ),
       backgroundColor: FlutterFlowTheme.customColor2,
       body: SafeArea(
         child: SingleChildScrollView(

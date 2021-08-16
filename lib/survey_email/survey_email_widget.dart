@@ -1,17 +1,20 @@
-import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../survey_results/survey_results_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SurveyEmailWidget extends StatefulWidget {
-  SurveyEmailWidget({Key key}) : super(key: key);
+  SurveyEmailWidget({
+    Key key,
+    this.expr,
+  }) : super(key: key);
+
+  final String expr;
 
   @override
   _SurveyEmailWidgetState createState() => _SurveyEmailWidgetState();
@@ -131,15 +134,12 @@ class _SurveyEmailWidgetState extends State<SurveyEmailWidget> {
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final surveyUpdateData = createSurveyRecordData(
-                        email: '0',
-                      );
-                      await surveyEmailSurveyRecord.reference
-                          .update(surveyUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SurveyResultsWidget(),
+                          builder: (context) => SurveyResultsWidget(
+                            expr: '0%2B${widget.expr}',
+                          ),
                         ),
                       );
                     },
@@ -166,15 +166,12 @@ class _SurveyEmailWidgetState extends State<SurveyEmailWidget> {
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final surveyUpdateData = createSurveyRecordData(
-                        email: '1.022',
-                      );
-                      await surveyEmailSurveyRecord.reference
-                          .update(surveyUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SurveyResultsWidget(),
+                          builder: (context) => SurveyResultsWidget(
+                            expr: '1.022%2B${widget.expr}',
+                          ),
                         ),
                       );
                     },
@@ -201,15 +198,12 @@ class _SurveyEmailWidgetState extends State<SurveyEmailWidget> {
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final surveyUpdateData = createSurveyRecordData(
-                        email: '2.044',
-                      );
-                      await surveyEmailSurveyRecord.reference
-                          .update(surveyUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SurveyResultsWidget(),
+                          builder: (context) => SurveyResultsWidget(
+                            expr: '2.044%2B${widget.expr}',
+                          ),
                         ),
                       );
                     },
@@ -236,15 +230,12 @@ class _SurveyEmailWidgetState extends State<SurveyEmailWidget> {
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      final surveyUpdateData = createSurveyRecordData(
-                        email: '3.066',
-                      );
-                      await surveyEmailSurveyRecord.reference
-                          .update(surveyUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SurveyResultsWidget(),
+                          builder: (context) => SurveyResultsWidget(
+                            expr: '3.066%2B${widget.expr}',
+                          ),
                         ),
                       );
                     },

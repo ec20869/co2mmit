@@ -379,6 +379,15 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                             )
                           ],
                         ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [],
+                        ),
                       )
                     ],
                   ),

@@ -1,11 +1,9 @@
-import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../survey_video/survey_video_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -137,15 +135,12 @@ class _SurveySocialWidgetState extends State<SurveySocialWidget> {
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        final surveyUpdateData = createSurveyRecordData(
-                          social: '0',
-                        );
-                        await surveySocialSurveyRecord.reference
-                            .update(surveyUpdateData);
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SurveyVideoWidget(),
+                            builder: (context) => SurveyVideoWidget(
+                              expr: '0',
+                            ),
                           ),
                         );
                       },
@@ -172,15 +167,12 @@ class _SurveySocialWidgetState extends State<SurveySocialWidget> {
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        final surveyUpdateData = createSurveyRecordData(
-                          social: '0.034',
-                        );
-                        await surveySocialSurveyRecord.reference
-                            .update(surveyUpdateData);
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SurveyVideoWidget(),
+                            builder: (context) => SurveyVideoWidget(
+                              expr: ' 0.034',
+                            ),
                           ),
                         );
                       },
@@ -207,15 +199,12 @@ class _SurveySocialWidgetState extends State<SurveySocialWidget> {
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        final surveyUpdateData = createSurveyRecordData(
-                          social: '0.068',
-                        );
-                        await surveySocialSurveyRecord.reference
-                            .update(surveyUpdateData);
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SurveyVideoWidget(),
+                            builder: (context) => SurveyVideoWidget(
+                              expr: '0.068',
+                            ),
                           ),
                         );
                       },
@@ -240,15 +229,12 @@ class _SurveySocialWidgetState extends State<SurveySocialWidget> {
                   ),
                   FFButtonWidget(
                     onPressed: () async {
-                      final surveyUpdateData = createSurveyRecordData(
-                        social: '0.102',
-                      );
-                      await surveySocialSurveyRecord.reference
-                          .update(surveyUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SurveyVideoWidget(),
+                          builder: (context) => SurveyVideoWidget(
+                            expr: '0.102',
+                          ),
                         ),
                       );
                     },
