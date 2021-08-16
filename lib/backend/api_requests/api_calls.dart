@@ -10,9 +10,8 @@ Future<dynamic> getResultsCall({
 }) =>
     ApiManager.instance.makeApiCall(
       callName: 'get results',
-      apiDomain: 'api.mathjs.org',
-      apiEndpoint:
-          'v4/?expr=$social%2B$video%2B$gaming%2B$audio%2B$email%2B$internet%2B',
+      apiUrl:
+          'http://api.mathjs.org/v4/?expr=$social%2B$video%2B$gaming%2B$audio%2B$email%2B$internet%2B',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

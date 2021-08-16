@@ -1,3 +1,4 @@
+import '../about/about_widget.dart';
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../backend/firebase_storage/storage.dart';
@@ -5,7 +6,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/upload_media.dart';
-import '../register/register_widget.dart';
+import '../login/login_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -63,12 +64,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
           IconButton(
             onPressed: () async {
               await signOut();
-              await Navigator.pushAndRemoveUntil(
+              await Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => RegisterWidget(),
+                  builder: (context) => LoginWidget(),
                 ),
-                (r) => false,
               );
             },
             icon: Icon(
@@ -190,7 +190,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 style: GoogleFonts.getFont(
                                   'DM Sans',
                                   color: FlutterFlowTheme.customColor4,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.normal,
                                   fontSize: 10,
                                 ),
                               ),
@@ -340,6 +340,41 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                   width: 1,
                                 ),
                                 borderRadius: 8,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            FFButtonWidget(
+                              onPressed: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => AboutWidget(),
+                                  ),
+                                );
+                              },
+                              text: 'About us',
+                              options: FFButtonOptions(
+                                width: 130,
+                                height: 40,
+                                color: FlutterFlowTheme.customColor2,
+                                textStyle: FlutterFlowTheme.subtitle2.override(
+                                  fontFamily: 'Open Sans Condensed',
+                                  color: FlutterFlowTheme.customColor4,
+                                ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                borderRadius: 12,
                               ),
                             )
                           ],

@@ -2,6 +2,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
+import '../measure_emissions/measure_emissions_widget.dart';
 import '../survey_welcome/survey_welcome_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -269,6 +270,33 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                 ),
                 borderSide: BorderSide(
                   color: FlutterFlowTheme.customColor1,
+                  width: 1,
+                ),
+                borderRadius: 5,
+              ),
+            ),
+            FFButtonWidget(
+              onPressed: () async {
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MeasureEmissionsWidget(),
+                  ),
+                );
+              },
+              text: 'How we calculate your emissions',
+              options: FFButtonOptions(
+                width: 320,
+                height: 55,
+                color: FlutterFlowTheme.customColor2,
+                textStyle: FlutterFlowTheme.subtitle2.override(
+                  fontFamily: 'Open Sans Condensed',
+                  color: FlutterFlowTheme.customColor4,
+                  fontSize: 15,
+                  fontWeight: FontWeight.normal,
+                ),
+                borderSide: BorderSide(
+                  color: FlutterFlowTheme.customColor2,
                   width: 1,
                 ),
                 borderRadius: 5,

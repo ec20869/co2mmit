@@ -59,15 +59,13 @@ class _EmissionsEmailWidgetState extends State<EmissionsEmailWidget> {
             children: [
               Row(
                 mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                    child: Image.network(
-                      'https://quickchart.io/chart/render/zm-f6ee1d00-4ba0-424f-ae40-7b4de8518393',
-                      width: 330,
-                      height: 230,
-                      fit: BoxFit.contain,
-                    ),
+                  Image.network(
+                    'https://quickchart.io/chart/render/zm-f6ee1d00-4ba0-424f-ae40-7b4de8518393',
+                    width: 330,
+                    height: 230,
+                    fit: BoxFit.contain,
                   )
                 ],
               ),

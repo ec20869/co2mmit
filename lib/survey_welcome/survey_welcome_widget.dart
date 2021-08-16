@@ -56,7 +56,7 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
                     child: AutoSizeText(
-                      'Welcome to CO2MMIT, your personal digital carbon footprint calculator',
+                      'Welcome to CO2MMIT, ',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.title1.override(
                         fontFamily: 'Open Sans Condensed',
@@ -69,12 +69,25 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
                 )
               ],
             ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
+              child: AutoSizeText(
+                'your personal digital carbon footprint calculator',
+                textAlign: TextAlign.center,
+                style: FlutterFlowTheme.title1.override(
+                  fontFamily: 'Open Sans Condensed',
+                  color: FlutterFlowTheme.customColor4,
+                  fontSize: 35,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
             Row(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(60, 20, 60, 40),
+                    padding: EdgeInsets.fromLTRB(80, 20, 80, 40),
                     child: AutoSizeText(
                       'To get started...we have a few questions on your digital habits that will help us measure your estimated digital carbon footprint',
                       textAlign: TextAlign.center,
@@ -107,8 +120,7 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
                   ),
                 );
               },
-              text:
-                  '   Start survey now                                         ',
+              text: '   Start survey now                                    ',
               options: FFButtonOptions(
                 width: 150,
                 height: 55,

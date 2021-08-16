@@ -7,6 +7,7 @@ import '../emissions_video/emissions_video_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -115,8 +116,9 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
             padding: EdgeInsets.fromLTRB(20, 12, 20, 0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
+                AutoSizeText(
                   'Emissions Categories',
                   style: FlutterFlowTheme.title3.override(
                     fontFamily: 'Open Sans Condensed',
@@ -132,6 +134,7 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
@@ -492,8 +495,9 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
             padding: EdgeInsets.fromLTRB(20, 8, 20, 8),
             child: Row(
               mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
+                AutoSizeText(
                   'My Emissions',
                   style: FlutterFlowTheme.title3.override(
                     fontFamily: 'Open Sans Condensed',
@@ -507,6 +511,7 @@ class _MyCo2WidgetState extends State<MyCo2Widget> {
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(16, 12, 16, 0),
