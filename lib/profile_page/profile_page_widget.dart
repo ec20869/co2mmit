@@ -111,8 +111,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 Align(
                                   alignment: Alignment(0, 0),
                                   child: Container(
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.5,
+                                    width: 200,
                                     height: 100,
                                     decoration: BoxDecoration(
                                       color: Color(0x77090F13),
