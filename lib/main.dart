@@ -4,10 +4,10 @@ import 'auth/firebase_user_provider.dart';
 import 'package:co2mmit/register/register_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
+import 'overview/overview_widget.dart';
 import 'my_co2/my_co2_widget.dart';
 import 'actions/actions_widget.dart';
 import 'profile_page/profile_page_widget.dart';
-import 'overview/overview_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -76,15 +76,23 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
+      'Overview': OverviewWidget(),
       'MyCo2': MyCo2Widget(),
       'Actions': ActionsWidget(),
       'ProfilePage': ProfilePageWidget(),
-      'Overview': OverviewWidget(),
     };
     return Scaffold(
       body: tabs[_currentPage],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_outlined,
+              color: Color(0xFF9E9E9E),
+              size: 24,
+            ),
+            label: '',
+          ),
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.cloud,
@@ -106,14 +114,6 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24,
             ),
             label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
-              color: Color(0xFF9E9E9E),
-              size: 24,
-            ),
-            label: '',
           )
         ],
         backgroundColor: FlutterFlowTheme.customColor5,
