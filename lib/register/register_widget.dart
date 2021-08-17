@@ -98,7 +98,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
                                 padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
@@ -322,36 +322,30 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 child: Align(
                                   alignment: Alignment(0, 0),
                                   child: Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                                    padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
-                                        Expanded(
-                                          child: Align(
-                                            alignment: Alignment(0, 1),
-                                            child: Text(
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Text(
                                               'Already have an account?',
-                                              textAlign: TextAlign.start,
-                                              style: FlutterFlowTheme.subtitle2
+                                              style: FlutterFlowTheme.bodyText1
                                                   .override(
                                                 fontFamily:
                                                     'Open Sans Condensed',
                                                 color: FlutterFlowTheme
                                                     .customColor5,
                                                 fontSize: 18,
+                                                fontWeight: FontWeight.w500,
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment: Alignment(0, 1),
-                                          child: Padding(
-                                            padding: EdgeInsets.fromLTRB(
-                                                0, 0, 20, 0),
-                                            child: FFButtonWidget(
+                                            FFButtonWidget(
                                               onPressed: () async {
                                                 await Navigator.push(
                                                   context,
@@ -363,8 +357,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                               },
                                               text: 'Login',
                                               options: FFButtonOptions(
-                                                width: 100,
-                                                height: 23,
+                                                width: 130,
+                                                height: 40,
                                                 color: FlutterFlowTheme
                                                     .customColor2,
                                                 textStyle: FlutterFlowTheme
@@ -378,11 +372,12 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                 ),
                                                 borderSide: BorderSide(
                                                   color: Colors.transparent,
+                                                  width: 1,
                                                 ),
-                                                borderRadius: 0,
+                                                borderRadius: 12,
                                               ),
-                                            ),
-                                          ),
+                                            )
+                                          ],
                                         )
                                       ],
                                     ),

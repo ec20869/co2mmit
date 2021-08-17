@@ -4,7 +4,6 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
 import '../register/register_widget.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -54,35 +53,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                   )
                 ],
               ),
-              Row(
+              Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Expanded(
-                    child: Container(
-                      width: 375,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.customColor2,
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
-                              child: Image.asset(
-                                'assets/images/Logo@3x.png',
-                                width: 350,
-                                height: 100,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
+                  Image.asset(
+                    'assets/images/Logo@3x.png',
+                    width: 350,
+                    height: 100,
+                    fit: BoxFit.cover,
                   )
                 ],
               ),
@@ -90,16 +68,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                    child: AutoSizeText(
-                      'DIGITAL CARBON FOOTPRINT TRACKER',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.title2.override(
-                        fontFamily: 'Open Sans Condensed',
-                        color: FlutterFlowTheme.customColor4,
-                        fontSize: 19,
-                      ),
+                  Text(
+                    'DIGITAL CARBON FOOTPRINT TRACKER',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.title2.override(
+                      fontFamily: 'Open Sans Condensed',
+                      color: FlutterFlowTheme.customColor4,
+                      fontSize: 19,
                     ),
                   )
                 ],
@@ -274,40 +249,23 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
-                                      Expanded(
-                                        child: Align(
-                                          alignment: Alignment(0, 1),
-                                          child: InkWell(
-                                            onTap: () async {
-                                              await Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      RegisterWidget(),
-                                                ),
-                                              );
-                                            },
-                                            child: Text(
-                                              'Don\'t have an account yet?',
-                                              textAlign: TextAlign.start,
-                                              style: FlutterFlowTheme.subtitle2
-                                                  .override(
-                                                fontFamily:
-                                                    'Open Sans Condensed',
-                                                color: FlutterFlowTheme
-                                                    .customColor5,
-                                                fontSize: 18,
-                                              ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'Don\'t have an account yet?',
+                                            style: FlutterFlowTheme.bodyText1
+                                                .override(
+                                              fontFamily: 'Open Sans Condensed',
+                                              color:
+                                                  FlutterFlowTheme.customColor5,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w500,
                                             ),
                                           ),
-                                        ),
-                                      ),
-                                      Align(
-                                        alignment: Alignment(0, 1),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsets.fromLTRB(0, 0, 20, 0),
-                                          child: FFButtonWidget(
+                                          FFButtonWidget(
                                             onPressed: () async {
                                               await Navigator.push(
                                                 context,
@@ -319,8 +277,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             },
                                             text: 'Register',
                                             options: FFButtonOptions(
-                                              width: 100,
-                                              height: 23,
+                                              width: 130,
+                                              height: 40,
                                               color:
                                                   FlutterFlowTheme.customColor2,
                                               textStyle: FlutterFlowTheme
@@ -334,11 +292,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               ),
                                               borderSide: BorderSide(
                                                 color: Colors.transparent,
+                                                width: 1,
                                               ),
-                                              borderRadius: 0,
+                                              borderRadius: 12,
                                             ),
-                                          ),
-                                        ),
+                                          )
+                                        ],
                                       )
                                     ],
                                   ),
