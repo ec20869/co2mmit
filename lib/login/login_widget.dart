@@ -45,31 +45,60 @@ class _LoginWidgetState extends State<LoginWidget> {
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.customColor2,
+                    ),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
                   Expanded(
                     child: Container(
                       width: 375,
-                      height: 250,
+                      height: 100,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.customColor2,
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: Image.asset(
-                            'assets/images/Logo@3x.png',
-                          ).image,
-                        ),
                         shape: BoxShape.rectangle,
                       ),
-                      child: Align(
-                        alignment: Alignment(0, 0.45),
-                        child: AutoSizeText(
-                          'DIGITAL CARBON FOOTPRINT TRACKER',
-                          textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.title2.override(
-                            fontFamily: 'Open Sans Condensed',
-                            color: FlutterFlowTheme.customColor6,
-                            fontSize: 19,
-                          ),
-                        ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
+                              child: Image.asset(
+                                'assets/images/Logo@3x.png',
+                                width: 350,
+                                height: 100,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                    child: AutoSizeText(
+                      'DIGITAL CARBON FOOTPRINT TRACKER',
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.title2.override(
+                        fontFamily: 'Open Sans Condensed',
+                        color: FlutterFlowTheme.customColor4,
+                        fontSize: 19,
                       ),
                     ),
                   )

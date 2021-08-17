@@ -1,11 +1,8 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../survey_social/survey_social_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -104,44 +101,38 @@ class _SurveyWelcomeWidgetState extends State<SurveyWelcomeWidget> {
                 )
               ],
             ),
-            Align(
-              alignment: Alignment(0, 0),
-              child: FFButtonWidget(
-                onPressed: () async {
-                  final surveyCreateData = createSurveyRecordData(
-                    social: '0',
-                    video: '0',
-                    audio: '0',
-                    email: '0',
-                    gaming: '0',
-                    internet: '0',
-                  );
-                  await SurveyRecord.collection.doc().set(surveyCreateData);
-                  await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SurveySocialWidget(),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FFButtonWidget(
+                  onPressed: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SurveySocialWidget(),
+                      ),
+                    );
+                  },
+                  text: 'Start survey now',
+                  options: FFButtonOptions(
+                    width: 150,
+                    height: 55,
+                    color: FlutterFlowTheme.customColor2,
+                    textStyle: FlutterFlowTheme.subtitle2.override(
+                      fontFamily: 'Open Sans Condensed',
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
                     ),
-                  );
-                },
-                text: '   Start survey now                        ',
-                options: FFButtonOptions(
-                  width: 150,
-                  height: 55,
-                  color: FlutterFlowTheme.customColor2,
-                  textStyle: FlutterFlowTheme.subtitle2.override(
-                    fontFamily: 'Open Sans Condensed',
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.customColor4,
+                      width: 1,
+                    ),
+                    borderRadius: 12,
                   ),
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.customColor1,
-                    width: 1,
-                  ),
-                  borderRadius: 5,
-                ),
-              ),
+                )
+              ],
             )
           ],
         ),

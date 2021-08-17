@@ -71,9 +71,9 @@ class _SplashscreenWidgetState extends State<SplashscreenWidget>
                       alignment: Alignment(0, -0.94),
                       child: Image.asset(
                         'assets/images/Logo@3x.png',
-                        width: 2700,
-                        height: 150,
-                        fit: BoxFit.fitWidth,
+                        width: 350,
+                        height: 100,
+                        fit: BoxFit.cover,
                       ).animated([animationsMap['imageOnPageLoadAnimation']]),
                     ),
                     Align(

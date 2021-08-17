@@ -46,57 +46,56 @@ class _RegisterWidgetState extends State<RegisterWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Row(
+              Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Expanded(
-                    child: Container(
-                      width: 375,
-                      height: 250,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.customColor2,
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: Image.asset(
-                            'assets/images/Logo@3x.png',
-                          ).image,
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        width: 100,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.customColor2,
                         ),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment(0, 0.85),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Align(
-                              alignment: Alignment(0, 0.45),
-                              child: AutoSizeText(
-                                'DIGITAL CARBON FOOTPRINT TRACKER',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.title2.override(
-                                  fontFamily: 'Open Sans Condensed',
-                                  color: FlutterFlowTheme.customColor6,
-                                  fontSize: 19,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
+                      )
+                    ],
+                  ),
+                  Image.asset(
+                    'assets/images/Logo@3x.png',
+                    width: 350,
+                    height: 90,
+                    fit: BoxFit.cover,
                   )
                 ],
               ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AutoSizeText(
+                      'DIGITAL CARBON FOOTPRINT TRACKER',
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.title2.override(
+                        fontFamily: 'Open Sans Condensed',
+                        color: FlutterFlowTheme.customColor4,
+                        fontSize: 19,
+                      ),
+                    )
+                  ],
+                ),
+              ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                  padding: EdgeInsets.fromLTRB(0, 70, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.fromLTRB(24, 20, 24, 0),
+                          padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
