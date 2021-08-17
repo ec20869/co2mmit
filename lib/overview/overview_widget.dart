@@ -31,6 +31,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
       backgroundColor: FlutterFlowTheme.customColor2,
       body: SafeArea(
         child: SingleChildScrollView(
+          primary: false,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
