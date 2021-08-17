@@ -88,18 +88,22 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                 ),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Padding(
                                       padding:
                                           EdgeInsets.fromLTRB(12, 4, 12, 4),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
                                             child: AutoSizeText(
                                               'Video Emissions',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
                                                 fontFamily:
@@ -126,12 +130,15 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           EdgeInsets.fromLTRB(12, 4, 12, 4),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
                                             child: AutoSizeText(
                                               'Watch Your Video Streaming',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.subtitle1
                                                   .override(
                                                 fontFamily:
@@ -153,6 +160,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Expanded(
                                             child: AutoSizeText(
                                               'Turn off auto-play. \\nClose tabs not in use to prevent videos playing in the background\\nAvoid using videos when you only need audio\\nReduce Ultra HD video to lower quality\\n',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
                                                 fontFamily:
@@ -187,18 +195,22 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                 ),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Padding(
                                       padding:
                                           EdgeInsets.fromLTRB(12, 4, 12, 4),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
                                             child: AutoSizeText(
                                               'Email Emissions',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
                                                 fontFamily:
@@ -225,12 +237,15 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           EdgeInsets.fromLTRB(12, 4, 12, 4),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
                                             child: AutoSizeText(
                                               'Change Your Email Habits',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.subtitle1
                                                   .override(
                                                 fontFamily:
@@ -252,6 +267,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Expanded(
                                             child: AutoSizeText(
                                               'Power down your computer if away for more than 2hrs\\nReduce number of emails sent per day\\nClean out your inbox regularly\\nUnsubscribe from emails\\n',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
                                                 fontFamily:
@@ -296,8 +312,9 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Internet Emissions',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
                                                 fontFamily:
@@ -330,6 +347,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
                                             child: AutoSizeText(
                                               'Choose a Conscious Cloud',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.subtitle1
                                                   .override(
                                                 fontFamily:
@@ -349,8 +367,9 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Consider storing your data on a green cloud provider\\nMove to a eco-conscious network provider\\nGo direct to website directly rather then using a search engine\\nUse an alternative eco-friendly search engine\\n',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
                                                 fontFamily:
@@ -414,6 +433,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
                                             child: AutoSizeText(
                                               'Internet Emissions',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
                                                 fontFamily:
@@ -446,6 +466,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
                                             child: AutoSizeText(
                                               'Kill the Vampire Power',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.subtitle1
                                                   .override(
                                                 fontFamily:
@@ -467,6 +488,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Expanded(
                                             child: AutoSizeText(
                                               'Shut down your devices overnight \\nSet your devices to sleep mode after a set time when inactive\\nDim your devices to conserve energy use\\nHold onto devices for as long as possible and avoid upgrades\\n',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
                                                 fontFamily:
@@ -511,8 +533,9 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Gaming Emissions',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
                                                 fontFamily:
@@ -545,6 +568,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
                                             child: AutoSizeText(
                                               'Make Your Playground Eco',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.subtitle1
                                                   .override(
                                                 fontFamily:
@@ -566,6 +590,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Expanded(
                                             child: AutoSizeText(
                                               'Switch to a greener gaming console\\nUse games that have eco-conscious design\\nTurn off equipment when not in use\\nReduce weekly play time\\n',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
                                                 fontFamily:
@@ -612,6 +637,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
                                             child: AutoSizeText(
                                               'Audio Emissions',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
                                                 fontFamily:
@@ -644,6 +670,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                                 EdgeInsets.fromLTRB(0, 4, 0, 0),
                                             child: AutoSizeText(
                                               'Listen to Your Conscious',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.subtitle1
                                                   .override(
                                                 fontFamily:
@@ -665,6 +692,7 @@ class _ActionsWidgetState extends State<ActionsWidget> {
                                           Expanded(
                                             child: AutoSizeText(
                                               'Download music or podcast instead of streaming\\nBuy the physical copies (vinyl, cassettes) instead of online\\nChange your autoplay settings\\nAvoid using videos when you only need audio\\n',
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.bodyText2
                                                   .override(
                                                 fontFamily:
